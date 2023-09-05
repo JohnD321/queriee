@@ -1,0 +1,15 @@
+<!Doctype html><html><head><meta charset="utf-8"/>
+<style>
+html,body{height: 100%; margin: auto;}
+.c{display: grid; grid-template-columns: repeat(5, 1fr); height: inherit}
+</style>
+</head><body><script src='clock.js'></script>
+<script>const d= document.body.appendChild(document.createElement('div'))
+d.classList.add('c')
+const a= ['Pacific/Guadalcanal','Australia/Sydney','Pacific/Honolulu',
+ 'America/Juneau','America/Los_Angeles','America/Denver','America/Chicago',
+ 'America/New_York','America/Halifax','America/St_Johns','Atlantic/Reykjavik',
+ 'Europe/London','Europe/Istanbul','Asia/Tehran','Asia/Calcutta']
+for(let i= a.length; i--;) d.appendChild(document.createElement('div'))
+d.querySelectorAll('div').forEach((e,i)=> f(e,a[i]))
+</script></body></html>
