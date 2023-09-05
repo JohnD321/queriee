@@ -1,0 +1,185 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><style>
+  :root {color-scheme: dark light;} html {height: 100%}
+  body {overflow: hidden; background-color: canvas; height: calc(100% - 8px); margin-right: 0; margin-bottom: 0} 
+  #f {display: flex; gap: 2%; height: 100%; user-select: none; position: relative} #f> :last-child {overflow: auto;}
+  #f> :first-child {width: min-content;}
+  #a {outline: solid thin; width: var(--aw); display: flex; flex-direction: column; align-content: flex-end}
+  #a> div:last-child {flex-grow: 1}
+  #a:hover, #a:active, #b:hover, #b:active{resize: both; overflow: hidden}  #a div {outline-width: thin} #bb> .w~ div {display: inline}
+  #a> code {position: absolute; top: 0; left: 0}
+  #b {white-space: nowrap; overflow: hidden; opacity: .5} .w, #b> div:first-child {width: var(--w)}
+  #b> div {width: var(--aw); height: 100%; display: inline-block} #b.b> div:not(:first-child) {border-right: dotted thin}
+  #bb> div, #b {height: var(--h); outline: thin dotted; outline-offset: -.07ex; background-color: #aaa5;}
+  #b, canvas {position: absolute; top: 0; left: 0} canvas{pointer-events: none}
+  #b, #bb {outline-style: dotted; outline-offset: -.07ex}
+  input {width: 100%; accent-color: canvastext; outline: none; margin: 0}
+  label {position: relative; display: block; height: -webkit-fill-available}
+  button {margin: auto; display: block; position: relative} #bb.s {outline: solid medium; outline-color: mark}
+  code.s, span.s {color: marktext; background-color: mark; opacity: .75}
+  #bb.s1 {outline: dashed medium; opacity: .5}
+  code.s1, span.s1 {text-decoration: underline dashed .2em; text-decoration-skip-ink: none; opacity: .35}
+</style><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script></head><body>
+<div id= 'f'><div><div id= 'a'><canvas id= 'c'></canvas><div id= 'b'></div><div id= 'bb' class='s s1'></div><div></div></div>
+  <label><input id= 'd' type='range' list= 't' min='0' autocomplete= 'off'><code class= 's s1'></code>
+    <datalist id='t'><option value='0'></option><option value='0'></option><option value='1'></option></datalist></label></div>
+  <div><h1>Optimization problem: scaling a 'wrapped' rectangle</h1>
+    <p>An item rectangle is to be fit inside a container rectangle. If it extends past the container's
+    width, it is allowed to stack as segments by wrapping, similar to rows of text in a paragraph.
+    To further adjust the fit, the item's dimensions can be scaled (resized proportionally),
+     similar to changing the paragraph's font size.</p>
+    <p>A scale of <code>2</code> doubles the item's height and width.
+    For the resulting stack, not only does the height of each row double, but the row count
+    can double due to wrapping of the doubled width. The change in stack height can thus approach the square of the scaling.</p>
+    <p>Find the <span class= 's'>greatest scale</span> such that the stack height does not
+    <span class= 's1'>exceed the height of the container.</span></p>
+    <p>Try different scales using the slider under the figure. Use mouse to drag slider or use keyboard arrow keys for more precision.
+    As values are chosen an overlay plot of stack height(depth) vs scale factor will display.</p>
+    <p>To test new initial dimensions, drag the bottom right corner of container and item rectangles. </p>
+    <p>Find the general formula for the optimum scale given the relative container and item dimensions.</p>
+    <div style= 'text-align: center; line-height: 3.5; white-space: pre-wrap'><button type= 'button'>answer</button></div></div></div>
+<script>let ah, bh, aw, bw, cw, ch, cw1, ch1, x1, x2= 3, x3= x2+ 1
+const $= x=> document.getElementById(x), a= $('a'), b= $('b'), bb= $('bb'), c= $('c'), d= $('d')
+  , t=c.getContext('2d'), p= 1/ window.devicePixelRatio, s= Array.from(document.getElementsByClassName('s'))
+  , s1= Array.from(document.getElementsByClassName('s1'))
+a.addEventListener('mousedown', _=> addEventListener('mouseup', f3, {once: true}))
+d.focus(); addEventListener('click', _=> d.focus()); 
+document.querySelector('button').addEventListener('click', function (e){const t= document.createTextNode(
+  String.raw `\(\displaystyle{r_h=\frac{\textsf{container height}}{\textsf{item height}},}\;\;\)${
+  ''}\(\displaystyle{r_w=\frac{\textsf{container width}}{\textsf{item width}},}\;\;\)\(\displaystyle{r=\frac{r_h}{r_w}}\)`
+  + '\n'+ String.raw `\(\displaystyle{\textsf{row count }n=\left\lceil \frac{-1+\sqrt{4r+1}}{2}\right\rceil,}\;\;${
+  ''}\)\(\displaystyle{\textsf{scale}=\begin{cases}r_h \div n,&\text{if } r\leq n^2 \\r_w \times n,&\text{if } n^2\leq r\end{cases}}\)`)
+  let p= e.target.parentElement.parentElement; e.target.replaceWith(t); MathJax.typeset([t])
+  p.scrollTo(0, p.scrollHeight); d.value= x1; d.dispatchEvent(new Event('input'))}, {once: true})
+d.addEventListener('input', f1); matchMedia('(prefers-color-scheme: dark)').addEventListener('change', f2); f(68,7,32,76)
+function f(){[ah, bh, aw, bw]= arguments; a.style.setProperty('--aw', aw+ 'vw'); a.style.height= `${ah}vh`; a.style.width= b.style.height= ''
+  let m= Math.max(Math.sqrt(aw* ah/ bw/ bh), 1); cw= c.width= a.clientWidth; ch= c.height= a.clientHeight; cw1= cw/ m; ch1= ch/ ah; 
+  t.globalCompositeOperation= 'xor'; f2(); let k= Math.ceil(m* bw/ aw); k= Math.max(0, k- b.childElementCount)
+  while(k--) [b, bb].forEach(b=> b.appendChild(document.createElement('div')))
+  x1= (function(){let rh= ah/ bh, rw= aw/ bw, r= rh/ rw, n= Math.ceil((-1+ Math.sqrt(4* r+ 1))/ 2)
+   return r< n* n? rh/ n: rw* n})()
+  d.step= 10** -x2; [x1, d.max]= [x1, m].map((i, j)=> document.querySelectorAll('option')[j].value= (i= String(i)).slice(0, i.indexOf('.')+ x3))
+  d.value= 1; d.dispatchEvent(new Event('input'))}
+function f1(e){let x= +e.target.value, h= x* bh, w= x* bw, i= Math.max(0, Math.ceil(w/ aw)-1), i1= bb.children[i], j= bb.querySelector('.w')
+  if(j!=i1) (new Set([i1, j?? i1])).forEach(i=> i.classList.toggle('w')); s[1].textContent= x.toFixed(x2); b.style.width= w+ 'vw'
+  a.style.setProperty('--w', (w% aw|| aw)+ 'vw'); a.style.setProperty('--h', h+ 'vh')
+  s.forEach(s=> s.classList.toggle('s', x1== x)); s1.forEach(s=> s.classList.toggle('s1', x1< x)); t.fillRect(x* cw1, h* (i+ 1)* ch1, p, p)}
+function f2(){t.fillStyle= getComputedStyle(a).color; let i=2; while(i--) t.fillRect(0, 0, cw, ch)}
+function f3(e){if(![a, b].includes(e.target)) return; let x= 100/ innerWidth, y= 100/ innerHeight
+  f(a.clientHeight* y, b.clientHeight* y, a.clientWidth* x, b.clientWidth* x)}
+d.addEventListener('mouseup', _=> b.classList.remove('b')); d.addEventListener('mousedown', _=> b.classList.add('b'))
+function f5(e){if(e.repeat) {b.classList.add('b'); d.removeEventListener('keydown', f5)}}
+d.addEventListener('keydown', f5); d.addEventListener('keyup', _=> {b.classList.remove('b'); d.addEventListener('keydown', f5)})
+</script></body></html>
+<!--
+:active needed with(after?) :hover to keep mouse from losing drag connection since resize is part of the style
+
+how to demonstrate nearness to r= n^2 or r= n^2 + n, ex how to lock in r=49 exact, or r=42
+dimension amts now shown in console.log @61
+how about during resize drag?? using ResizeObserver and getBoundingClientRect() to show "r=" inside container a
+watch out for sub-pixel rendering resulting from vh & vw units
+dragging a new new size for a and b automatically rounds to integer pixels
+got a lot of console.log info to get rid of
+
+trying to prevent overflow hidden until mouse pointer directly over the 15x15 resize corner
+ok tried 15x15 div abs at corner, but how to set css so that parent (a) changes to overflow:hidden  ?? js listener instead?
+new problem, once we move position:relative from f to a, we get erratic display from b:hover
+---
+how to let overflow of bb visible when hovering over a or b
+change from hover to mouseover?
+
+former code truncating decimal places i< (i= i.toFixed(x2))? i= (i- d.step).toFixed(x2): i)
+ now:  (i= String(i)).slice(0, i.indexOf('.')+ x3)
+
+if resize a while b is 0 then we get a 1 to 100 scale and b always 0, how to bump b upto something maybe same width and half height? r=2
+how does res/precision work in scaling gradient and coincide with opt ans and 1
+also watch out for 0 child div under bb when scaling to zero, the width jumps back to container width
+tried to fix but affected last row width
+and what's with the vertical line segment in ffox?? could be residual divs are somehow visible?
+ yeah, they're all showing as 0x19 dimensions at zero scale, and at 1 row norm.scale we get: same(0x19)
+
+understand what x0 does, also x1, x2
+x0 @56 it's the truncated version of opt scale x1, visual only?
+x1 starts out as the scale formula, 
+
+why does column space occur between narrow container and block of paragraphs in flex f?
+label width affects slider affects flex? actually f left div needs width: min-content
+and we need to shorten the text <code> make it vertical?
+
+------------------------------------
+
+variables:
+f= flex container of full project
+row of two children:
+-figure with slider
+-Explanation with answer
+a= container rectangle
+b= item rectangle
+bb= container for segmented b rectangles
+c= canvas, accessories
+d= input slider
+i= next row index (f1)
+j= prev row index (f1)
+k= row count via upper bound m (f) after resizing by user (or initial run) must add enough div elements
+  i= highest saved k value (f) probably no way to avoid this outside variable to compare if i<k ?? better variable than i?
+  or just use b.childElementCount instead of a running total
+m= upperbound scale
+s= html collection of class .s with outline solid = optimal value achieved
+t= canvas rendering context
+x1= Optimum scale calculated by g()
+x2= input step (exponent) i= input step (decimal)
+
+project container is a flexbox of two items,
+ one displaying the figure and input slider,
+  the other a description and a MathJax formula hidden behind an answer button
+the gap is 2% and any layered elements line up near the top left of this block
+
+a class .w is assigned to the bottom visible segment of bb having a calculated width
+and subsequent segments become 'invisible' (0 width and height) via inline display since all divs remain empty
+
+w,x,y,j are inside variables
+x= e.target.value= input value scalar
+w= scalar adjusted width
+j= row count-- = highest 0-index of a0.children to be used (if count=0, consider child(0) as used)
+update width and height via custom properties --w and --h
+
+issues
+idea: avoid :hover/:active use instead check for scale moved back to 1, only then allow handles
+concept of inverse formula? multiple items?
+what is the formula for various scales()? various heights()? formula for one row: n=1?
+we found that r<2 for n=1, but the graph is based on scale of b and height of a?
+or it is container height agnostic and just calculates stack heights based on bh,bw,aw
+click(same scale unchanged) vs ctrl-click(new current scale = 1)
+is def k problematic: floor of integer problem?
+click anywhere on b and that will be the new corner?
+leaving mouse over a or b and thus hiding bb stack, not good..
+
+might have to apply width,height css to canvas when some window resizing occurs (resizeObserver)?
+  canvas stretches over right column text preventing scrollwheel scroll
+  but reset css when canvas is erased ie when drag-resize of rects
+consider hiding tick once landed and replace when mouse release? to allow smooth approach
+devtools responsive design indicates tiny fonts?
+might want to retain precise values of x1 and m
+trying to scrollTo when button clicked in case small screen,
+typeset delayed so no scroll until exit from d.focus click handler (??)
+b.style.height='' at start of g() is weird too, also added a.style.width=''
+ must be removed to allow specificity of --h from #bb> div, #b{height: var(--h)}
+something weird at canvas fillRect x=1 point, gets hidden at every other pass
+add tick for optimum only when answer button pressed
+
+error: simple click of rectangle with no resize thinks it is initialized and sets current scale location to 1
+well there is a mini adjustment from fractional to integer once a resize is clicked
+difficult to compare old and new dimensions
+examine listener targets again: if handle clicked then a (or b) is .target, otherwise child element
+cannot detect whether a drag took place or just click
+what about screen change that affects rectangle dimensions?
+reduce verbiage near line#49: ... a.clientHeight/window.innerHeight*100 etc.
+
+copied code archive:
+r= new ResizeObserver(e=> {console.log(e[0].target.id, e[0].contentBoxSize[0].inlineSize, e[0].contentBoxSize[0].blockSize);
+     a.children[3].textContent= 'r= '+ (a.getBoundingClientRect().height/ b.getBoundingClientRect().height*
+     b.getBoundingClientRect().width/ a.getBoundingClientRect().width|| 1).toFixed(3)});
+
+@(52,63) x1 formula:
+; //f4(rh,rw,r,ah,aw,bh,bw)
+function f4(){/*console.clear();*/ console.log([...arguments]); console.log(a.clientHeight,a.clientWidth,b.clientHeight,b.clientWidth)}
+-->
