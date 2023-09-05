@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset='utf-8'>
+    <style>
+        table, td {width: 100%; min-height: 10px} th {text-align: left}
+        td {font: 30px sans-serif; text-align: center}
+        #y {opacity: 0} #z{outline: none} #z{white-space: pre-wrap}
+        #zz{font: 16px monospace}
+        .c {color: marktext; background: mark; font-weight: bold}
+    </style>
+</head>
+<body>
+<table>
+    <thead><tr><th>The Korean Conflict</th></tr></thead>
+    <tr><td id='x'></td></tr><tr><td id='y'></td></tr><tr><td id='z'contenteditable='true' spellcheck='false'></td></tr>
+    <tr><td id='zz'></td></tr>
+</table>
+<script>
+let a=[], b=[]
+a[0]= "First battle betweeen US and North Korea"; b[0]="Battle of Osan"
+a[1]="South Korea capital" ; b[1]="Seoul"
+a[2]="de facto capital of North Korea" ; b[2]="Pyongyang"
+a[3]="South Korea leader" ; b[3]="Syngman Rhee"
+a[4]="North Korea leader" ; b[4]="Kim Il Sung"
+a[5]="Soviet Union leader" ; b[5]="Joseph Stalin"
+a[6]="US President" ; b[6]="Harry S. Truman"
+a[7]="China leader" ; b[7]="Mao Zedong"
+a[8]="United Nations forces commander" ; b[8]="General Douglas MacArthur"
+a[9]="assumed boundary between North and South" ; b[9]="38th parallel"
+a[10]="Korean armistice date"; b[10]="27 July 1953"
+i=0
+let f1, g= _=> {z.textContent=''; y.style.opacity= +y.style.opacity+ .01}
+function f(){x.textContent= a[i]; y.textContent= b[i++]; z.textContent=''; y.style.opacity= 0; f1= g; zz.classList.remove('c')
+  if(i<= a.length){zz.textContent= 'press <enter> continously for greater hint'} else zz.textContent=''}
+f()
+function f2(){zz.classList.add('c'); zz.textContent= 'press <enter> for next item'; f1= f}
+z.focus(); addEventListener('click', _=> z.focus())
+z.addEventListener('input', _=>{if(z.textContent== y.textContent) f2()})
+
+addEventListener('keyup', e=> {if(['Enter','NumpadEnter'].includes(e.key)) f1()})
+addEventListener('keydown', e=> {if(['Enter','NumpadEnter'].includes(e.key)) e.preventDefault()})
+</script>
+</body>
+</html>
