@@ -54,7 +54,8 @@ if(navigator.keyboard) navigator.keyboard.getLayoutMap().then(k=> {Array.from(k.
 })
 setTimeout(_=> {f10();/*f([{code: aa[2][Math.floor(Math.random()* 11)+ 1], shiftKey: false},
                          {code: aa[2][Math.floor(Math.random()* 11)+ 1], shiftKey: false}])*/
-               f((_=> {let x=''; for(let i=0; i<4; i++)x+=aa[0][i];for(let i=9; i>5; i--)x+=aa[2][i];return x})())/*, 'qxx Eg')*/}, 500)
+               /*f((_=> {let x=''; for(let i=0; i<4; i++)x+=aa[0][i];for(let i=9; i>5; i--)x+=aa[2][i];return x})())*/
+                f('Hello World')}, 500)
 function f10(){let n2= [...n0].sort().map(i=> i[1])
   ;['Backquote','Tab','CapsLock','IntlBackslash'].forEach(i=> {let x= n2.indexOf(i); aa.push(n2.slice(x, x+ 14))})
   aa[3][14]='Space'; let h= (j, low, high)=> j> 13? 0: Math.min(Math.max(j, low), high)
