@@ -1,0 +1,80 @@
+<!Doctype html>
+<html>
+<head><meta charset="utf-8"><link href='typedrill.css' rel='stylesheet'></link></head>
+<body>
+<script>
+document.documentElement.focus()
+let kk= new Map(),
+  k0= new Map([['\x0F', 'ShiftRight'], ['\x0E', 'ShiftLeft'], ['\t', 'Tab'], ['\b', 'Backspace'], ['\n', 'Enter'], [' ', 'Space']]),
+  k00= new Map([['ShiftRight','\x0F'], ['ShiftLeft','\x0E'], ['Tab','\t'], ['Backspace','\b'], ['Enter','\n'], ['Space',' ']])
+let n0= new Map([[13,'Backspace'],[14,'Tab'],[28,'CapsLock'],[40,'Enter'],[41,'ShiftLeft'],[53,'ShiftRight'],
+    [54,'ControlLeft'],[55,'MetaLeft'],[56,'AltLeft'],[57,'Space'],[58,'AltRight'],[59,'MetaRight'],[60,'ContextMenu'],[61,'ControlRight']])
+  let n1= [17,31,21,11,34,43,12,24,38,26,52,25,37,8,16,30,5,9,23,51,6,46,3,0,33,35,15,1,19,20,39,42,27,36,32,22,18,44,29,2,7,49,4,10,48,47,45,50]
+  let s8= new Set(['Insert','Home','PageUp','Delete','End','PageDown','ArrowUp','ArrowLeft','ArrowDown','ArrowRight'])
+  let s9= new Set(['NumLock','NumpadDivide','NumpadMultiply','NumpadSubtract','Numpad7','Numpad8','Numpad9','NumpadAdd',
+    'Numpad4','Numpad5','Numpad6','Numpad1','Numpad2','Numpad3','NumpadEnter','Numpad0','NumpadDecimal'])
+let aa= []//, a1= Array.from(document.getElementsByClassName('w0')[0].children)
+let k2= new Map(), k1= new Map([['ArrowLeft','\u25C2'],['ArrowRight','\u25B8'],['ArrowUp','\u25B4'],['ArrowDown','\u25BE'],
+  ['PageUp','Page\nUp'],['PageDown','Page\nDown'],['Tab'],['CapsLock','Caps\nLock'],['Enter'],['ShiftLeft','Shift'],
+  ['ShiftRight','Shift'],['ControlLeft','Ctrl'],['ControlRight','Ctrl'],['AltLeft','Alt'],['AltRight','Alt'],
+  ['MetaRight','Mode\nChange'],['MetaLeft','Meta'],
+  ['Space'],['Insert'],['Delete'],['Home'],['End'],['Backspace'],['NumLock', 'Num\nLock'],['ContextMenu','𝄙'],['MetaRight','\u229E'],
+  ['MetaLeft','OS'],['NumpadEnter','Enter']])
+let k3= new Map([['Numpad0','Ins'],['Numpad1','End'],['Numpad2','\u25BE'],['Numpad3','Pg Dn'],['Numpad4','\u25C2'],
+  ['Numpad5',''],['Numpad6','\u25B8'],['Numpad7','Home'],['Numpad8','\u25B4'],['Numpad9','Pg Up'],['NumpadDecimal','Del']])
+let k7= new Map()
+let f= (k)=>{let f0, f1, f1a, f1b, f2, f3, f4, f, g, a, s0, s1, c, cc, m= new Map(), s, ss, d, index= 0
+  f= _=> {a= typeof k== 'string'? [...k].map(i=> ({code: k0.get(i)|| kk.get(i), shiftKey: kk.has(i)})): k; s0= new Set(); s1= new Set()
+    if(false) {f1= f1b;  a= a.map(i=> i.code); a.forEach(c=> {g(k7.get(c).h, 'b4a'); g(c, 'b', 'b1')})}
+    else {f1= f1a; f2= _=> {if(d&& cc== c&& !!ss== s) {f3(); f4()}}; f4()}}
+  f0= e=> {if(e.repeat) return; c= e.code; d= e.type== 'keydown'; s= e.shiftKey; f1()}
+  f1a= _=> {if(d && s1.has(c)) return; s1[d? 'add': 'delete'](c); f2()}
+  f1b= _=> {(a.includes(c)? s0: s1)[d? 'add': 'delete'](c); if(s0.size==a.length && s1.size==0){
+    if(a.length) {s1= new Set([...s0, ...s1]); s0.clear(); a= []} else {f3(); f5()} }}
+  f3= _=> {m.forEach((i,j)=> j.classList.remove(...i)); m.clear()}
+  f4= _=> {const e= a.shift(); if(!e) f2= _=> s1.size|| f5()
+    else {if(cc== (cc= e.code)) g(cc, 'bb'); const t= k7.get(cc).s; g(k7.get(cc).h, 'b4a'); a.slice(0,5).forEach(i=> g(i.code, 'c1')); g(cc, 'b','c0')
+      if(ss= e.shiftKey){g(t? '\x0E': '\x0F', 'b2'); g(t? 'ShiftLeft': 'ShiftRight', 'b','c0'); g(t? 'h1': 'h10', 'b4a')}}}
+  f5= _=> {/*if(++index< b.length) f()*/k=[{code: aa[2][Math.floor(Math.random()* 11)+ 1], shiftKey: false}]}
+  g= (i, ...b)=> {let e= document.getElementById(i); e.classList.add(...b); const g= m.get(e); g? b.forEach(i=>g.add(i)): m.set(e, new Set([...b])) }
+  addEventListener('keydown', f0); addEventListener('keyup', f0); f()
+}
+addEventListener('keydown', e=>{let c= e.code, x= e.key, y= 1- +e.shiftKey
+  let d = document.getElementById(c); if(!d) return; d.classList.add('p')
+  let k= k2.get(c); if(!k) k2.set(c, []); if(k1.has(c)){y= 0; x= k1.get(c)|| c} (k= k2.get(c))[+e.shiftKey]= x
+  if(e.location== 3){y= 0; if(e.shiftKey) return; if(!e.getModifierState('NumLock')) {if(k3.has(c)){y= 1; x= k3.get(c)}}}
+   // else if(!d.classList.contains('f')&& x.toUpperCase()!= x.toLowerCase()) {x= x.toUpperCase(); y=0}
+  d.children[y].textContent= x;  e.preventDefault()})
+addEventListener('keyup', e=>{let d = document.getElementById(e.code); if(!d) return; d.classList.remove('p')})
+if(!navigator.keyboard) ['Left', 'Right'].forEach(i=> document.getElementById('Meta'+ i).id= 'OS'+ i)
+if(navigator.keyboard) navigator.keyboard.getLayoutMap().then(k=> {Array.from(k.entries()).forEach(i=> {
+  k0.set(i[1], i[0]); k00.set(i[0],i[1]); k2.set(i[0], [i[1]])
+  let x= i[1].toUpperCase(); if(i[1].toLowerCase()!= x) {kk.set(x, i[0]); k2.get(i[0])[1]= x}})
+  Array.from(k.keys()).forEach((i,j)=> n0.set(String(n1[j]).padStart(2,0),i))
+})
+setTimeout(_=> {f10();/*f([{code: aa[2][Math.floor(Math.random()* 11)+ 1], shiftKey: false},
+                         {code: aa[2][Math.floor(Math.random()* 11)+ 1], shiftKey: false}])*/
+               f((_=> {let x=''; for(let i=0; i<4; i++)x+=aa[0][i];for(let i=9; i>5; i--)x+=aa[2][i];return x})())/*, 'qxx Eg')*/}, 500)
+function f10(){let n2= [...n0].sort().map(i=> i[1])
+  ;['Backquote','Tab','CapsLock','IntlBackslash'].forEach(i=> {let x= n2.indexOf(i); aa.push(n2.slice(x, x+ 14))})
+  aa[3][14]='Space'; let h= (j, low, high)=> j> 13? 0: Math.min(Math.max(j, low), high)
+  aa.forEach(i=> i.forEach((i,j)=> k7.set(i, j< 6? {h: 'h'+ h(j, 1, 4), s: false}: {h: 'h'+ h(j, 7, 10), s: true})) )
+  let c= document.body.appendChild(document.createElement('div')); c.className= 'c'
+  ;[new Set(n2), s8, s9].forEach((i,j)=> {let d= c.appendChild(document.createElement('div')); d.className= 'w'+ j
+     i.forEach(i=> {let d1= d.appendChild(document.createElement('div')); d1.id= i
+      ;[0,1].forEach(_=> d1.appendChild(document.createElement('div')) ) }) })
+  ;['KeyA','KeyS','KeyD','KeyF','KeyJ','KeyK','KeyL','Semicolon','Space'].forEach((i, j)=> {
+    let d= document.getElementById(i).appendChild(document.createElement('div')).appendChild(document.createElement('div'))
+    d.textContent= ['Ⅴ','Ⅳ','Ⅲ','Ⅱ','Ⅱ','Ⅲ','Ⅳ','Ⅴ','Ⅰ'][j]; d.id= 'h'+ [1,2,3,4,7,8,9,10,0][j]})
+  ;['Backspace','Tab','Backslash','CapsLock','Enter','ShiftLeft','ShiftRight','ControlLeft','MetaLeft','AltLeft','Space','AltRight','MetaRight','ContextMenu',
+    'ControlRight'].forEach((i,j)=> {let d= document.getElementById(i); d.style.gridColumnStart= 'span '+ [8,6,6,7,9,9,11,6,5,5,24,5,5,5,5][j]})
+  ;['ArrowUp','ArrowLeft','ArrowDown','ArrowRight','NumpadAdd','NumpadEnter','Numpad0'].forEach((i,j)=> {let d= document.getElementById(i)
+    d.style.gridRowStart= [4,5,5,5,'span 2','span 2','auto'][j]; d.style.gridColumnStart= [2,1,2,3,'auto','auto','span 2'][j]})
+  document.getElementById('IntlBackslash').style.display= 'none'
+  ;['ShiftLeft', 'ShiftRight'].forEach((i,j)=> document.getElementById(i).firstChild.id= ['\x0E', '\x0F'][j])
+  k1.forEach((i,j)=> (!i|| i.length> 2) && (document.getElementById(j).className= 'f'))
+  k3.forEach((i,j)=> (!i|| i.length> 2) && (document.getElementById(j).children[1].className='f1'))
+}
+</script>
+</body>
+</html>

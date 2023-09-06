@@ -1,0 +1,9 @@
+body {height: 100vh; margin:0; user-select: none; background: #888}
+.c {height: 100%; display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center; font-size: var(--x);
+ --y: 4vmin; --z: '?'; --w: .25}
+div {outline: double #222; text-align: center; white-space: pre-wrap}
+.c>div {display: flex; flex-direction: column; align-items: center; justify-content: center; width: 16%; height: 12%; margin: 0 2%}
+div.s {outline-width: 1.5vmin;} .s::before, .s1::before, .s2::before {content: var(--z)}
+.c>div:hover {background-color: #8808; transition: background-color 1s steps(3, start)} .c>div.s1 {background-color: transparent}
+.cd>div:not(:last-child) {opacity: var(--w); transition: opacity .5s steps(3, start); background-color: transparent}
+.c>div.c6 {font-size: var(--y)}

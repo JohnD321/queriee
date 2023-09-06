@@ -1,0 +1,27 @@
+:root {--c0: white; --c1: #fff5}
+html,body {--c: GrayText; --v: 1.25; font: calc(var(--v) * 1.25vw) monospace; user-select: none;
+  height: 100%; padding: 0; margin: 0; color: MarkText; background-color: var(--c)}
+.c1 {background-color: var(--c1)}
+.c0 {background-color: var(--c0)}
+.c {width: 100vw; display: flex; flex-direction: row; border-width: 0}
+.c > div > div {border-style: outset; white-space: pre; overflow: hidden; border-color: #aaa;
+    display: inline-flex; flex-direction: column; justify-content: space-around; position: relative}
+.c > div > div.p {border-style: inset; padding: .2vw 0 0 .2vw; font-weight: bolder}
+.c > div {background: var(--c)} .w0 > div {grid-column: span 4}
+.f {font: 1.1vw sans-serif;}
+.c > div > div.f {justify-content: space-between}
+.f1{font: 0.75vw sans-serif}
+.w0, .w1, .w2 {margin: calc(var(--v) * 1vw); display: grid; grid-auto-rows: calc(var(--v) * 4vw); grid-gap: calc(var(--v) * 1vmin)}
+.w0 {flex: calc(var(--v) * 15.5);grid-template-columns: repeat(60, 1fr);}
+.w1 {flex: calc(var(--v) * 3); grid-template-columns: repeat(3, 4fr); text-align: center}
+.w2 {flex: calc(var(--v) * 4); grid-template-columns: repeat(4, 4fr)}
+/* .c>div>div>div {display: none} */
+.b {outline: solid} .bb{outline: double calc(var(--v) * .5vw)}
+.b1 {background-color: white} .b2.b2 {display: block;}
+.c > div > div > div:nth-child(3) {display: inline-flex; flex-direction: column; justify-content: space-around;
+  text-align: center; font-family: sans-serif; opacity: .25; position: absolute; width: 100%; height: 100%;
+  font-size: calc(var(--v) * 1.25vw)}
+.b4a.b4a {font-weight: bolder; text-decoration: underline overline; font-family: serif; font-size: calc(var(--v) * 1.75vw); opacity: .5}
+.b5.b5 {position: relative;}
+.t {width: calc(var(--v) * 66%); margin: 1vw}
+.t1{display: flex; justify-content: center}
