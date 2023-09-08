@@ -17,10 +17,10 @@ let f=function(p,z=Intl.DateTimeFormat().resolvedOptions().timeZone){if(!(p&& p.
    c0.beginPath(); c0.lineDashOffset=0; c0.setLineDash([0, r2*r/12])
    c0.arc(0,0,r,0,r2); c0.stroke(); c2.canvas.height=c2.canvas.width=2*x; c2.drawImage(c0.canvas,0,0)
    c0.beginPath(); c0.lineDashOffset=-(r1+r0)* x; c0.setLineDash([(-4*r1 + 7*r0)* x])
-   c0.arc(0,0,r,m,m); c0.lineTo(0,0); c0.arc(0,0,r,h,h); c0.stroke(); c2.drawImage(c0.canvas,0,0);
+   c0.arc(0,0,r,m,m+.0001); c0.lineTo(0,0); c0.arc(0,0,r,h-.0001,h); c0.stroke(); c2.drawImage(c0.canvas,0,0);
    c1.globalCompositeOperation='source-over'; c1.beginPath(); c1.arc(0,0,r- 0.5,0,r2)
    c1.fillStyle=c1.strokeStyle=c[1- cb]; c1.closePath(); c1.fill(); c1.stroke()
-   c1.beginPath(); c1.arc(0,0,r,m,h,Math.floor((t2+ 6)/ 6.5)% 2); c1.lineTo(0,0); c1.closePath()
+   c1.beginPath(); c1.arc(0,0,r,m,h+.0001,Math.floor((t2+ 6)/ 6.5)% 2); c1.lineTo(0,0); c1.closePath()
    c1.fillStyle=c1.strokeStyle=c[cb]; c1.fill(); c1.stroke(); c0.shadowOffsetX=c0.shadowOffsetY=-(c0.shadowBlur=x/100); c1.fillStyle=c[1]
    ;[c0,c1].forEach((c,i)=>{c.globalCompositeOperation='difference'; c.fillText(z1,0,r/ 2); c2.drawImage(c.canvas,0,0)
     d[i]=c2.canvas.toDataURL(); c2.clearRect(0,0,x1,x1)}); d1.src=d[db] }; f()}; f(p,z)}
