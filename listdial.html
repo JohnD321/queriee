@@ -1,51 +1,43 @@
-<html>
-<head><style>li{backface-visibility: hidden; border-bottom:thin dotted;}</style></head>
-<body style=' margin:0; overflow:hidden;'>
-<div><ul></ul></div></body><script>
-d=document.querySelector('div')
-ul=document.querySelector('ul')
+<!Doctype html>
+<html><head><style>
+body {margin:0; overflow:hidden}
+li {backface-visibility: hidden; border-bottom:thin dotted}
+ul {listStyleType= 'circle'; transformStyle= 'preserve-3d'}
+div {width: 200px; margin: auto}
+</style></head>
+<body>
+<div><ul></ul></div>
+</body>
+<script>
+d= document.querySelector('div')
+ul= document.querySelector('ul')
 
-let a1=20// list total
-for(let i=0; i<a1; i++){
+let a1= 20
+for(let i= 0; i< a1; i++){
  let l= ul.appendChild(document.createElement('li'))
- l.textContent=i+1
+ l.textContent= i+ 1
 }
 
-d.style.width= 200
-d.style.margin= 'auto'
-
-ul.style.listStyleType='circle'
-ul.style.transformStyle= 'preserve-3d'
-
-let x=0
+let x= 0
 let h= ul.clientHeight
 let n= ul.childElementCount
 let c= 2* Math.PI/ n
-let z= h/n/2/Math.tan(c/2)
+let z= h/ n/ 2/ Math.tan(c/ 2)
 let y= 0.5
-let l=document.querySelectorAll('li')
-let a=a1/5// attempt to keep roughly 20/5, ie 4 items within the center view
-// need to set this view to a Math.min so that maximum is about 10
-// and consider repeating items in the background for lists with shorter totals
-//ex 4-item list will show the 4 items in front with 4(or 8) as copy in back
+let l= document.querySelectorAll('li')
+let a= a1/ 5
 
-d.style.perspective= z* Math.sqrt(1+ Math.tan(a*c)**2)+'px'
-d.style.perspectiveOrigin= `50% ${y*100}%`
-ul.style.transformOrigin= `50% ${y*100}%`
+d.style.perspective= z* Math.sqrt(1+ Math.tan(a* c)** 2)+'px'
+d.style.perspectiveOrigin= `50% ${y* 100}%`
+ul.style.transformOrigin= `50% ${y* 100}%`
 
-addEventListener('wheel',e=>{ul.style.transform='rotateX('+ (x-=c*Math.sign(e.deltaY)/2) +'rad)'})
+addEventListener('wheel', e=>{ul.style.transform='rotateX('+ (x-=c*Math.sign(e.deltaY)/2) +'rad)'})
 
-for(let i=0; i<n; i++) {ul.children[i].style.transform= `translateY(${h* (y - (2* i+ 1)/ 2/ n)}px)\
- rotateX(${-i* c}rad) translateZ(${z}px)`}
+for(let i=0; i< n; i++) ul.children[i].style.transform= `translateY(${h* (y - (2* i+ 1)/ 2/ n)}px)\
+ rotateX(${-i* c}rad) translateZ(${z}px)`
 
-d.style.transform=`translateY(${(window.innerHeight-d.clientHeight)/2}px)\
+d.style.transform=`translateY(${(window.innerHeight- d.clientHeight)/ 2}px)\
  scale(${l[0].clientWidth/ l[0].getBoundingClientRect().width})`
 
-ul.style.transform=`rotateX(${x+=.5*a*c}rad)`
+ul.style.transform=`rotateX(${x+= .5* a* c}rad)`
 </script></html>
-<!-- variables
-c: angular measurement of a one-item-turn of dial, ie 2π over item count
-x: current total of accumulated radians to update ul rotation on x axis, determines dial rotation from mousewheel, at the moment the rate of change is half of item turn
-y: 0 to 1 value for vertical location of dial, 0 top, 1 bottom, .5 middle
-z: formula for translateZ of list items, calc the adjacent side of right triangle (radius of dial)
--->

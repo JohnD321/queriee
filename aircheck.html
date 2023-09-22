@@ -4,8 +4,7 @@ select.m {color: magenta} select.y {color: yellowgreen} select.i {color: initial
 audio, select {display:block; margin: 0 auto; font-weight: bold; outline: none}
 </style></head><body><script>
 let k= {start: [],
-// audacy http://live.amperwave.net/direct/audacy-wwbxhd2aac-imc
- WBWD: [540, 'Islip, NY', 'Jiye..Ja!', 'Radio Zindagi', , 'http://us9.streamingpulse.com:7417/;'],// https://prod-54-81-231-255.wostreaming.net/audacy-wwbxhd2aac-imc
+ WBWD: [540, 'Islip, NY', 'Jiye..Ja!', 'Radio Zindagi', , 'http://us9.streamingpulse.com:7417/;'],
  WSJW: [550, 'Pawtucket, RI', 'Talk Radio for Catholic Life', 'Relevant Radio', ,'https://playerservices.streamtheworld.com/api/livestream-redirect/RR_MAIN.mp3'],
  WHYN: [560, 'Springfield', 'Springfield\'s News, Traffic & Weather Station', 'NewsRadio 560', , 'https://stream.revma.ihrhls.com/zc4685'],
  WMCA: [570, 'New York, NY', , 'AM 570 The Mission', , 'https://playerservices.streamtheworld.com/api/livestream-redirect/WMCAAMAAC.aac'],
@@ -35,7 +34,7 @@ let k= {start: [],
  WROL: [950, 'Greater Boston/Saugus', 'The Spirit of Boston', 'Salem Radio Network', , 'https://playerservices.streamtheworld.com/api/livestream-redirect/WROLAMAAC.aac'],
  WFGL: [960, 'Fitchburg', , , 'WRYP'],
  WELI: [960, 'New Haven, CT', 'New Haven\'s News, Weather & Traffic Station', , , 'https://stream.revma.ihrhls.com/zc453'],
- WCAP: [980, 'Lowell / Merrimack Valley', 'Everybody Gets It', , , 'http://streema.com/radios/play/WCAP'],//http://streema.com/radios/play/WCAP
+ WCAP: [980, 'Lowell / Merrimack Valley', 'Everybody Gets It', , , 'http://streema.com/radios/play/WCAP'],
  WINS: [1010, 'New York, NY', 'All news. All the time.', '1010 WINS', , 'https://playerservices.streamtheworld.com/api/livestream-redirect/WINSAMAAC_SC'],
  WBZ:  [1030, 'Boston', 'Boston\'s NewsRadio', 'WBZ NewsRadio 1030', , 'https://stream.revma.ihrhls.com/zc7729'],
  WQOM: [1060, 'Natick/Boston', 'The Station of the Cross Catholic Radio Network', , , 'https://hfc.streamguys1.com/wqom'],
@@ -396,8 +395,7 @@ let k= {start: [],
  W291CH: [106.1, 'Pittsfield', , , 'WFCR'],
  WEIB: [106.3, 'Northampton', 'the Cutting Edge Blend', '106.3 Smooth FM', ,'http://85.17.122.32:8252/stream/1/'],
  WWKX: [106.3, 'Providence, RI', 'The Hottest Music', 'Hot 106', , 'https://playerservices.streamtheworld.com/api/livestream-redirect/WWKXFMAAC.aac'],
- WFNQ: [106.3, 'Nashua, NH', 'New Hampshire\'s Greatest Hits', 'Frank FM', , 'https://playerservices.streamtheworld.com/api/livestream-redirect/WFNQ_FMAAC.aac'],//https://prod-100-24-13-135.amperwave.net/binnie-wfnqfmaac-hlsc.m3u8/?source=v7player&user-id=cbb2ed1992757c0380b04a680c31b00b&gpp=DBAA&z=199633d2ada74af6af531e0f38f26f73&p=1
- //http://live.amperwave.net/direct/audacy-binnie-wfnqfmaac-imc   wfanamaac-imc
+ WFNQ: [106.3, 'Nashua, NH', 'New Hampshire\'s Greatest Hits', 'Frank FM', , 'https://playerservices.streamtheworld.com/api/livestream-redirect/WFNQ_FMAAC.aac'],
  WNHI: [106.5, 'Farmington, NH', , 'Air1 Positive Hits', , 'https://maestro.emfcdn.com/stream_for/air1/tunein/aac'],
  WMJX: [106.7, 'Boston', 'Today\'s Hits Yesterday\'s Favorites', 'MAGIC 106.7', , 'https://playerservices.streamtheworld.com/api/livestream-redirect/WMJXFMAAC.aac'],
  WMJX_HD2: [106.7, , , 'MAGIC Christmas Music', , 'https://live.wostreaming.net/direct/audacy-wmjxhd2aac-imc'],
@@ -425,8 +423,7 @@ let k= {start: [],
  'GCNLive Channel 4': [, , , , , 'http://flow02.gcnlive.com/channel4-hi.mp3'],
  'GCNLive Channel 5': [, , , , , 'http://flow02.gcnlive.com/channel5-hi.mp3'],
  'GCNLive Channel 6': [, , , , , 'http://flow02.gcnlive.com/channel6-hi.mp3'],
- TheConservativeRadioNetwork: [, 'Worcester', , , , 'https://stream-150.zeno.fm/st9bhqvgvceuv'],
- TheBlaze: [, , , 'TheBlaze Radio Network', , 'https://playerservices.streamtheworld.com/api/livestream-redirect/BLZE_1AAC.aac'],
+  TheBlaze: [, , , 'TheBlaze Radio Network', , 'https://playerservices.streamtheworld.com/api/livestream-redirect/BLZE_1AAC.aac'],
  _WZBR: [, 'Dedham', 'Urban Heat 98.1FM', 'Bridging Boston\'s Communities', , 'https://streaming.radio.co/s07f9b8a04/listen'],
  indie617: [, , 'Boston\'s Independent Music Source', , , 'https://playerservices.streamtheworld.com/api/livestream-redirect/INDIE617AAC.aac'],
  JazzWorks: [, , , , , 'https://ais-sa3.cdnstream1.com/2558_128.mp3'],
@@ -454,19 +451,4 @@ s.addEventListener('change', e=>{a.src= ''; s.className= (v= s.options[s.selecte
  clearTimeout(t); if (['ustream','streema'].some(x=>v.includes(x))) t=setTimeout(_=> window.open(v,'_blank'), 5000); else a.src=v})
 a.addEventListener('loadeddata', e=> s.className= 'y'); a.addEventListener('playing', e=> s.className= 'i')
 </script></body></html>
-<!--
-a	HTML audio element
-f	remove any leading _ chr signifying identical fm/am call signs
-i	keys of stations object k denoted by station name
-j	corresponding value of key i, station information in array format:
-	[frequency, location, slogan, branding, simulcast station, URL stream]
-k	data list of radio station names and info (see: i,j)
-o	HTML option element for each station entry in select menu s
-s	HTML select element for stations menu
-t	5 sec abort timeout identifier for streams that need to open in separate page
-v	value of option (streaming or website URL)
-color classNames: 'm'= magenta, 'y'= yellowgreen, i='initial'
 
-? how to set a simulcast chain, ex. 100.5FM W263DE to 1520AM WIZZ to 99.3FM WLZX_HD3
-lately i must click play button to start certain stations, but old versions work ok
--->
