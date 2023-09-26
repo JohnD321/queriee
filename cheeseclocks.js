@@ -7,7 +7,8 @@ let f= function(p, z= Intl.DateTimeFormat().resolvedOptions().timeZone){if(!(p&&
     f= function(p, z){q.push(p); p.addEventListener('dragstart', e=> e.preventDefault())
       p.addEventListener('click', _=>{if(qb){qb= false
         q.forEach(e=> e.dispatchEvent(new MouseEvent('click'))); qb= true} else f()})
-      p.addEventListener('mouseenter', _=>{d1.src= d[db= 0]; preventDefault()}); p.addEventListener('mouseout', _=> d1.src= d[db= 1])
+      p.addEventListener('mouseenter', _=>{d1.src= d[db= 0]; p.style.pointerEvents='none'});
+      p.addEventListener('mouseout', _=> {d1.src= d[db= 1}]; p.style.pointerEvents=''})
       const z1= (z.slice(z.lastIndexOf('/')+ 1)).split('_').join(' ')
       let d= [], db= 1, d1= p.appendChild(document.createElement('div')); d1.style.width= d1.style.height= '100%'
       d1= d1.appendChild(document.createElement('img')); d1.style.width= d1.style.height= '100%'; d1.style.objectFit= 'contain'
