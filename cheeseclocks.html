@@ -2,7 +2,8 @@
 <style>:root{}
 html,body {height: 100%; margin: auto;}
 .c {display: grid; grid-template-columns: repeat(5, 1fr); height: inherit}
-.c> div {user-select: none}
+.c> div> div {position: relative}
+.c> div> div> div {position: absolute; width: 100%; height: 100%; top: 0;left: 0}
 </style>
 </head><body><script src='cheeseclocks.js'></script>
 <script>const d= document.body.appendChild(document.createElement('div'))
