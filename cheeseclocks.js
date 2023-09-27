@@ -11,6 +11,7 @@ let f= function(p, z= Intl.DateTimeFormat().resolvedOptions().timeZone){if(!(p&&
       const z1= (z.slice(z.lastIndexOf('/')+ 1)).split('_').join(' ')
       let d= [], db= 1, d1= p.appendChild(document.createElement('div')); d1.style.width= d1.style.height= '100%'
       d1= d1.appendChild(document.createElement('img')); d1.style.width= d1.style.height= '100%'; d1.style.objectFit= 'contain'
+      
       let f= function(){let t= new Date(),
         t2= (Date.parse(t.toLocaleString('en', {timeZone: z}))+ t.getMilliseconds()- t.getTimezoneOffset()* 60000)/ t0
         t= t2% 1; setTimeout(f, ((t>= .5)+ .5 -t)* t0); t2= Math.round(t2)% t1
