@@ -1,0 +1,367 @@
+The Function Mode
+
+The [TEMPO/FUNCTION No.] button provides access to a range of functions that give the P-120/P-120S extraordinary versatility. The functions are categorized in groups as follows:
+
+F1	Tuning	31
+F2	Scale	31
+F3	Dual Mode Functions	32
+F4	Split Mode Functions	33
+F5	Pedal Functions	35
+F6	Metronome Volume	36
+F7	Preset Song Part Cancel Volume	36
+F8	MIDI Functions	37
+F9	Backup Functions	40
+
+To Select a Function
+1.	Press the [TEMPO/FUNCTION No.] button so that its [FUNCTION No.] indicator lights.
+
+NOTE
+Functions cannot be selected during demo/preset song mode or when the user song recorder is in operation.
+
+2.	Use the [TEMPO/FUNCTION No. Down,Up] buttons to select the desired function from F1 through F9.
+
+3.	In the case of the Scale (F2), Dual Mode (F3), Split Mode (F4), Pedal Functions (F5), MIDI (F8), and Backup (F9) functions, you will have to press the [plus/YES/Up] button once to enter the respective sub-mode after the function has been selected, and then use the [TEMPO/FUNCTION No. Down,Up] buttons again to select the desired sub-function.
+
+NOTE
+The Dual or Split mode must be engaged before the F3 and F4 functions can be selected, respectively. If the corresponding mode is not engaged, " F3.-" or " F4.-" will appear on the display and the corresponding sub-mode will not be available.
+
+The Dual mode can be engaged while in the Function mode, but the Function mode must be exited before the Split mode can be engaged.
+
+(Figure)
+Operation Example
+F3.Y
+Press [plus/YES/Up]
+F3.1 ... D3.7 (sub-mode)
+Use [TEMPO/FUNCTION No. Down,Up]
+F3.2
+Press [minus/NO/Down] or [plus/YES/Up] once
+minus 10 ... 0 ... 10
+Use [minus/NO/Down], [plus/YES/Up]
+5
+
+4.	Set the function as required by using the [minus/NO/Down] and [plus/YES/Up] buttons (see the individual function descriptions, below).
+
+NOTE
+After selecting the function, the current setting will be displayed when the [minus/NO/Down] or [plus/YES/Up] button is pressed for the first time.
+
+5.	Press the [TEMPO/FUNCTION No.] button so that its [TEMPO] indicator lights to exit from the function mode.
+
+F1:	Tuning
+In addition to the tuning method described on page 24, overall tuning can also be accomplished via the F1 function.
+After selecting "F1", use the [minus/NO/Down] and [plus/YES/Up] buttons to lower or raise the pitch in approximately 0.2 Hz increments (the first time the [minus/NO/Down] or [plus/YES/Up] button is pressed simply switches to the tuning value display without actually changing the tuning). The overall tuning range is from 427.0 Hz to 453.0 Hz (corresponding to the A3 note's Hz). Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default value "440.0 Hz".
+Tenths of a Hertz are indicated on the LED display by the appearance and position of one or two dots, as in the following example:
+
+(Table)
+Display	Value
+440	440.0
+4.40	440.2
+44.0	440.4
+440.	440.6
+4.40.	440.8
+(Table end)
+
+
+F2:	Scale
+After selecting "F2.Y", press the [plus/YES/Up] button to engage the scale function sub-mode, then use the [TEMPO/FUNCTION No. Down,Up] buttons to select the desired scale function, as listed below. 
+
+F2.1: Scale
+In addition to the standard Equal Temperament tuning, the P-120/P-120S includes 6 classic tunings that you can select and use to play music of the corresponding period, or experiment with in a more modern context. The tunings are:
+
+1: Equal Temperament
+2: Pure Major
+3: Pure Minor
+4: Pythagorean
+5: Mean Tone
+6: Werckmeister
+7: Kirnberger
+
+Use the [minus/NO/Down] and [plus/YES/Up] buttons to select the number of the desired tuning.
+Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default settings (Equal Temperament tuning).
+
+F2.2: Base Note
+Unlike Equal Temperament tuning, these classic tunings must be tuned to a specific key. Use the [minus/NO/Down] and [plus/YES/Up] buttons to select the key you want the previously selected tuning to be based. The selected key will appear on the display, followed by a low bar if flat (e.g. "A_") or a high bar if sharp (e.g. "F-").
+Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default settings "C".
+
+NOTE
+The base note setting is effective for tunings other than the Equal Temperament tuning.
+
+
+F3:	Dual Mode Functions
+After selecting "F3.Y", press the [plus/YES/Up] button to engage the dual-mode function sub-mode, then use the [TEMPO/FUNCTION No. Down,Up] buttons to select the desired dual mode function, as listed below. 
+If the Dual mode is not engaged "F3.-" will appear instead of "F3.Y" and the Dual mode functions cannot be selected. If this happens engage the Dual mode and proceed.
+
+SHORTCUT: 	You can jump directly to the dual-mode functions (F3) by pressing the [TEMPO/FUNCTION No.] button while holding the two dual-mode voice selectors.
+
+NOTE
+Dual mode function settings are set individually for each voice combination.
+
+F3.1: Dual Balance
+The volume levels of the two voices combined in the dual mode can be adjusted as required by using this function. Use the [minus/NO/Down] and [plus/YES/Up] buttons to adjust the balance as required. The balance range is from 0 through 20. A setting of "10" produces equal balance between the two dual-mode voices. Settings below "10" increase the volume of the 2nd Voice in relation to the 1st Voice, and settings above "10" increase the volume of the 1st Voice in relation to the 2nd Voice ("1st" and "2nd" is explained on page 18). Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting (different for each voice combination).
+You can set one voice as the main voice, and another voice as a softer, mixed voice.
+
+F3.2: Dual Detune
+This function makes it possible to detune the 1st and 2nd dual-mode Voices to create a thicker sound. Use the [minus/NO/Down] and [plus/YES/Up] buttons to set the amount of detuning as required. The detune range is from -10 through 10. A setting of "0" sets both voices to the same pitch. Settings below "0" increase the pitch of the 2nd Voice in relation to the 1st Voice, and settings above "0" increase the pitch of the 1st Voice in relation to the 2nd Voice ("1st" and "2nd" is explained on page 18). Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting (different for each voice combination).
+
+F3.3: 1st Voice Octave Shift
+F3.4: 2nd Voice Octave Shift
+Depending on which voices you combine using the dual mode, the combination may sound better if one of the voices is shifted up or down an octave. Use the [minus/NO/Down] and [plus/YES/Up] buttons to set the octave of the 1st or 2nd Voice as required ("1st" and "2nd" is explained on page 18). The available settings are "0" for normal pitch, "-1" to shift the pitch down one octave, and "1" to shift the pitch up one octave. Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting (different for each voice combination).
+
+F3.5: 1st Voice Effect Depth
+F3.6: 2nd Voice Effect Depth
+These functions make it possible to individually set the depth of the effect for the 1st and 2nd dual-mode Voices ("1st" and "2nd" is explained on page 18). Use the [minus/NO/Down] and [plus/YES/Up] buttons to set the effect depth for the corresponding voice as required. The depth range is from 0 through 20. A setting of "0" produces no effect, while a setting of "20" produces maximum effect depth. Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting (different for each voice combination).
+
+NOTE
+The effect depth settings cannot be changed unless the EFFECT is ON. The Function mode must be exited before EFFECT can be turned ON.
+
+F3.7: Reset
+This function resets all dual-mode functions to their default values. Press the [plus/YES/Up] button to reset the values. "End" will appear on the display when all functions have been reset.
+
+
+F4:	Split Mode Functions
+After selecting "F4.Y", press the [plus/YES/Up] button to engage the split-mode function sub-mode, then use the [TEMPO/FUNCTION No. Down,Up] buttons to select the desired split mode function, as listed below. 
+If the Split mode is not engaged "F4.-" will appear instead of "F4.Y" and the Split mode functions cannot be selected. Also note that you must exit from the Function mode before the Split mode can be engaged.
+
+SHORTCUT:	You can jump directly to the split-mode functions (F4) by pressing the [TEMPO/FUNCTION No.] button while holding the [SPLIT] button.
+
+F4.1: Split Point
+In addition to the split point setting method described on page 19, the split point can be set via this function. Use the [minus/NO/Down] and [plus/YES/Up] buttons to set the split point as required, or simply press the appropriate key on the keyboard: from "A-1" to "C7". Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting "F sharp 2".
+
+F4.2: Split Balance
+The volume levels of the two voices combined in the split mode can be adjusted as required by using this function. Use the [minus/NO/Down] and [plus/YES/Up] buttons to adjust the balance as required. The balance range is from 0 through 20. A setting of "10" produces equal balance between the two split-mode voices. Settings below "10" increase the volume of the Left Voice in relation to the Right Voice, and settings above "10" increase the volume of the Right Voice in relation to the Left Voice. Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting (different for each voice combination).
+
+NOTE
+The split balance setting is set individually for each voice combination.
+
+F4.3: Right Voice Octave Shift
+F4.4: Left Voice Octave Shift
+Depending on which voices you combine using the split mode, the combination may sound better if one of the voices is shifted up or down an octave. Use the [minus/NO/Down] and [plus/YES/Up] buttons to set the octave of the Left or Right Voice as required. The available settings are "0" for normal pitch, "minus 1" to shift the pitch down one octave, and "1" to shift the pitch up one octave. Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting (different for each voice combination).
+Set according to the pitch extent for the song you want to play.
+
+NOTE
+The octave shift settings are set individually for each voice combination.
+
+F4.5: Right Voice Effect Depth
+F4.6: Left Voice Effect Depth
+These functions make it possible to individually set the depth of the effect for the Left and Right split-mode Voices. Use the [minus/NO/Down] and [plus/YES/Up] buttons to set the effect depth for the corresponding voice as required. The depth range is from 0 through 20. A setting of "0" produces no effect, while a setting of "20" produces maximum effect depth. Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting (different for each voice combination).
+
+NOTE
+The effect depth settings cannot be changed unless the EFFECT is ON. The Function mode must be exited before EFFECT can be turned ON.
+
+The effect depth settings are set individually for each voice combination.
+
+F4.7: Sustain Pedal Range
+The Sustain Pedal Range function determines whether the sustain pedal affects the Right Voice, the Left Voice, or both the Left and Right Voices in the split mode. Use the [minus/NO/Down] and [plus/YES/Up] buttons to select "2" for the Left Voice, "1" for the Right Voice, or "ALL" for both voices. Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting "ALL".
+
+F4.8: AUX Pedal Range
+The AUX Pedal Range function determines whether the AUX pedal affects the Right Voice, the Left Voice, or both the Left and Right Voices in the split mode. Use the [minus/NO/Down] and [plus/YES/Up] buttons to select "2" for the Left Voice, "1" for the Right Voice, or "ALL" for both voices. Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting "ALL".
+
+NOTE
+When sustain is assigned to the AUX PEDAL function (F5.1), the setting in this section will be ignored and the setting in section F4.7 will be in affect.
+
+F4.9: Reset
+This function resets all split-mode functions to their default values. Press the [plus/YES/Up] button to reset the values. "End" will appear on the display when all functions have been reset.
+
+
+F5:	Pedal Functions
+After selecting "F5.Y", press the [plus/YES/Up] button to engage the pedal functions sub mode, then use the [TEMPO/FUNCTION No. Down,Up] buttons to select the desired pedal functions, as listed below.
+
+F5.1: AUX PEDAL Mode
+This function conveniently lets you set operation of the AUX PEDAL to one of the modes listed below. Use the [minus/NO/Down] and [plus/YES/Up] buttons to select the desired AUX PEDAL mode. Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting of "1".
+
+1.	Soft Pedal
+The soft pedal reduces the volume and slightly changes the timbre of notes played while the pedal is pressed. The soft pedal will not affect notes which are already playing when it is pressed.
+
+2.	Sostenuto Pedal
+If you play a note or chord on the keyboard and press the pedal while the note(s) are held, those notes will be sustained for as long as the pedal is held (as if the sustain pedal had been pressed) but all notes played thereafter will not be sustained. This makes it possible to sustain a chord, for example, while other notes are played "staccato."
+
+NOTE
+Organ, string and choir voices will continue to sound for as long as the sostenuto pedal is depressed.
+
+3.	Expression
+This mode allows control of dynamics during performance.
+
+4.	Sustain Pedal (ON/OFF)
+The sustain pedal functions in the same way as the damper pedal on an acoustic piano. In this case the AUX PEDAL operates as an ON/OFF switch so when the pedal is pressed, notes played have a long sustain. Releasing the pedal immediately stops (dampens) any sustained notes.
+
+5.	Sustain Pedal (Continuous)
+The sustain pedal functions in the same basic way as the damper pedal on an acoustic piano however, in this case the pedal operates as continuous controller so the further down the pedal is pressed, the longer notes will sustain (can be used like a half pedal effect).
+
+6.	Variation
+This mode allows switching of the Voice's variation on or off. In this mode, the AUX PEDAL functions in the same manner as the [VARIATION] button on the panel.
+
+7.	Song Start/Stop
+This mode allows starting/stopping of song playback. In this mode, the AUX PEDAL functions in the same manner as the SONG [START/STOP] button on the panel.
+
+NOTE
+We recommend that an optional foot controller FC7 be used with mode 3 (Expression). In mode 5 (Sustain Pedal [Continuous]), we recommend that the supplied pedal be used. For all other modes, we recommend either the supplied pedal or the optional FC4 foot switch be used.
+
+F5.2: Sustain Sample Depth
+The GRAND PIANO 1 and 2 voices feature special "Sustain Samples" that recreate the unique resonance produced by an acoustic grand piano's soundboard and strings when its damper pedal is pressed. The effect is can be controlled with the P-120/P-120S's sustain pedal or the AUX PEDAL to which the sustain function has been assigned. This function lets you adjust the depth of this effect. The effect depth range is from 0 through 20. A setting of "0" produces no effect, while a setting of "20" produces maximum effect depth. Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting of "12".
+
+F5.3: Soft Pedal Effect Depth
+This function sets the depth of the soft pedal effect. The effect depth range is from 1 to 5. A setting of "1" produces minimum effect depth while a setting of "5" produces maximum effect depth. Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting of "3".
+
+F5.4: SUSTAIN PEDAL Type
+F5.5: AUX PEDAL Type
+Depending upon the pedal that is connected to the SUSTAIN PEDAL jack or AUX PEDAL jack, the effect produced by operating the pedal (ON/OFF, dynamics, etc.) might be reversed. If that is the case, use this setting to correct pedal operation. The setting range is from 1 to 2. Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting of "1".
+
+NOTE
+Make sure that the power is switched OFF when connecting or disconnecting the pedal.
+
+If the SUSTAIN PEDAL type is set to "2", disconnecting the sustain pedal while the power is switched on may leave the sustain active, causing notes to sustain indefinitely. In this case, switch the power "OFF" then back "ON".
+
+
+
+F6:	Metronome Volume
+SHORTCUT:	You can jump directly to the metronome functions by pressing the [TEMPO/FUNCTION No.] button while holding the METRONOME [START/STOP] button.
+
+The volume of the metronome sound can be changed. After selecting "F6", use the 
+[minus/NO/Down] and [plus/YES/Up] buttons to set the metronome volume as required. The volume range is from 1 through 20. A setting of "1" produces minimum sound, while a setting of "20" produces maximum metronome volume. Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting "10".
+
+
+F7:	Preset Song Part Cancel Volume
+This function sets the volume at which a "canceled" part is played during preset song playback (see page 17 for information on the "preset song part cancel" function). Use the 
+[minus/NO/Down] and [plus/YES/Up] buttons to set the volume as required. The volume range is from 0 through 20. A setting of "0" produces no sound, while a setting of "20" produces maximum volume. Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting "5".
+Adjust the part volume to a comfortable level to use the "canceled" part as a guide to play along with. Set to "0" if you don't want to hear the part.
+
+
+F8:	MIDI Functions
+
+MIDI, the Musical Instrument Digital Interface, is a world-standard communication interface that allows MIDI-compatible musical instruments and equipment to share musical information and control one another. This makes it possible to create "systems" of MIDI instruments and equipment that offer far greater versatility and control than is available with isolated instruments. For example, most MIDI keyboards (including the P-120/P-120S, of course) transmit note and velocity (touch response) information via the MIDI OUT connector whenever a note is played on the keyboard. If the MIDI OUT connector is connected to the MIDI IN connector of a second keyboard (synthesizer, etc.) or a tone generator (essentially a synthesizer with no keyboard), the second keyboard or tone generator will respond precisely to notes played on the original transmitting keyboard. The result is that you can effectively play two instruments at once, providing thick multi-instrument sounds.
+This same type of musical information transfer is used for MIDI sequence recording. A sequence recorder can be used to "record" MIDI data received from a P-120/P-120S, for example. When the recorded data is played back, the P-120/P-120S automatically "plays" the recorded performance in precise detail.
+The examples given above really only scratch the surface. MIDI can do much, much more. The P-120/P-120S MIDI functions allow it to be used in fairly sophisticated MIDI systems.
+
+After selecting "F8.Y", press the [plus/YES/Up] button to engage the MIDI function sub-mode, then use the [TEMPO/FUNCTION No. Down,Up] buttons to select the desired MIDI function, as listed below. 
+
+NOTE
+The side-panel HOST SELECT switch must be set to "MIDI" in order to use the MIDI connectors. When you use the TO HOST connector, set the HOST SELECT switch to the appropriate position for the type of computer you are using (see page 41). In this situation, all MIDI settings described below will have affect on the MIDI signal in and out of the TO HOST connector.
+
+Always use a high-quality MIDI cable to connect MIDI OUT to MIDI IN terminals. Never use MIDI cables longer than about 15 meters, since cables longer than this can pick up noise which can cause data errors.
+
+F8.1: MIDI Transmit Channel Selection
+F8.2: MIDI Receive Channel Selection
+
+(Figure)
+
+The MIDI system allows transmission and reception of MIDI data on 16 different channels. Multiple channels have been implemented to allow selective control of certain instruments or devices connected in series. For example, a single MIDI sequence recorder could be used to "play" two different instruments or tone generators. One of the instruments or tone generators could be set to receive only on channel 1, while the other is set to receive on channel 2. In this situation the first instrument or tone generator will respond only to channel-1 information transmitted by the sequence recorder, while the second instrument or tone generator will respond only to channel-2 information. This allows the sequence recorder to "play" two completely different parts on the receiving instruments or tone generators.
+In any MIDI control setup, the MIDI channels of the transmitting and receiving equipment must be matched for proper data transfer. A "Multi-timbre" receive mode is also available, which allows simultaneous reception of different parts on all 16 MIDI channels, allowing the P-120/P-120S to play multi-channel song data received from a music computer or sequencer. There's also a "1-2" mode which allows simultaneous reception on channels 1 and 2.
+
+Use the [minus/NO/Down] and [plus/YES/Up] buttons to select the desired transmit or receive channel. The transmit channel parameter can also be turned "OFF" if you don't want the P-120/P-120S to transmit any MIDI data. To select the multi-timbre receive mode, set the receive channel to "ALL". Select "1-2" for multi-timbre reception on channels 1 and 2 only.
+Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting: transmit equal "1"; receive = "ALL".
+
+NOTE
+In the dual mode first voice data is transmitted on its set channel, and in the split mode right voice data is transmitted on its set channel. In the dual mode second voice data is transmitted on the next greater channel number of the set channel, and in the split mode left voice data is transmitted on the next greater channel number of the set channel. In either mode, no data is transmitted if the transmit channel is set to "OFF".
+
+Demo/preset song data and recorder playback data are not transmitted via MIDI.
+
+No MIDI reception occurs when the demo/preset song mode is engaged.
+
+Program change and other like channel messages received will not affect the P-120/P-120S's panel settings or what is being played on the keyboard.
+
+F8.3: Local Control ON/OFF
+"Local Control" refers to the fact that, normally, the P-120/P-120S keyboard controls its internal tone generator, allowing the internal voices to be played directly from the keyboard. This situation is "Local Control On" since the internal tone generator is controlled locally by its own keyboard.
+Local control can be turned OFF, however, so that the P-120/P-120S keyboard does not play the internal voices, but the appropriate MIDI information is still transmitted via the MIDI OUT connector when notes are played on the keyboard. At the same time, the internal tone generator responds to MIDI information received via the MIDI IN connector.
+Use the [minus/NO/Down] and [plus/YES/Up] buttons to turn local control "On" or "OFF". 
+Press [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting "On".
+
+F8.4: Program Change ON/OFF
+Normally the P-120/P-120S will respond to MIDI program change numbers received from an external keyboard or other MIDI device, causing the correspondingly numbered voice to be selected on the corresponding channel (the keyboard voice does not change). The P-120/P-120S will normally also send a MIDI program change number whenever one of its voices is selected, causing the correspondingly numbered voice or program to be selected on the external MIDI device if the device is set up to receive and respond to MIDI program change numbers.
+This function makes it possible to cancel program change number reception and transmission so that voices can be selected on the P-120/P-120S without affecting the external MIDI device.
+Use the [minus/NO/Down] and [plus/YES/Up] buttons to turn program change transmission and reception "On" or "OFF". 
+Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting "On".
+
+NOTE
+For information on program change numbers for each of the P-120/P-120S's voices, refer to page 51 in the MIDI Data Format section.
+
+F8.5: Control Change ON/OFF
+Normally the P-120/P-120S will respond to MIDI control change data received from an external MIDI device or keyboard, causing the voice on the corresponding channel to be affected by pedal and other "control" settings received from the controlling device (the keyboard voice is not affected). The P-120/P-120S also transmits MIDI control change information when the pedal or other appropriate controls are operated.
+This function makes it possible to cancel control change data reception and transmission so that, for example, the P-120/P-120S's pedal and other controls can be operated without affecting an external MIDI device.
+Use the [minus/NO/Down] and [plus/YES/Up] buttons to turn control change transmission and reception "On" or "OFF". 
+Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting "On".
+
+NOTE
+For information on control changes that can be used with the P-120/P-120S, refer to the MIDI Data Format on page 50.
+
+F8.6: MIDI Transmit Transpose
+This function allows the MIDI note data transmitted by the P-120/P-120S to be transposed up or down in semitone increments by up to plus or minus 12 semitones. The pitch of the P-120/P-120S itself is not affected.
+Use the [minus/NO/Down] and [plus/YES/Up] buttons to set the desired amount of MIDI transmit transposition. The range is from "-12" (down one octave) through "0" (no transposition) to "12" (up one octave). 
+Press the [minus/NO/Down] and [plus/YES/Up] buttons simultaneously to recall the default setting "0".
+
+F8.7: Panel/Status Transmit
+This function causes all the current P-120/P-120S panel settings (selected voice, etc.) to be transmitted via the MIDI OUT terminal. This is particularly useful if you will be recording performances to a MIDI sequence recorder such as the Yamaha MIDI Data Filer MDF3 which will be used to control the P-120/P-120S on playback. By transmitting the P-120/P-120S panel settings and recording them on the MIDI sequence recorder prior to the actual performance data, the P-120/P-120S will be automatically restored to the same settings when the performance is played back. 
+Press the [plus/YES/Up] button to transmit the panel/status data. "End" will appear on the LED display when the data has been successfully transmitted.
+
+NOTE
+See page 51 for list of the "Panel Data Contents" transmitted by this function.
+
+Panel setting data that is transmitted to an external device can only be reloaded on another P-120/P-120S. Panel setting data can also be directly transferred to or from another P-120/P-120S.
+
+F8.8: Bulk Data Dump
+This function is used to transmit all data stored in the User Song Recorder memory to a MIDI data storage device such as the Yamaha MIDI Data Filer MDF3, other sequence recorders, or MIDI compatible computers.
+Press the [plus/YES/Up] button to begin bulk transmission. "End" will appear on the LED display when the data has been successfully transmitted.
+
+NOTE
+User song recorder data that is transmitted to an external device can only be reloaded on another P-120/P-120S. Recorder data can also be directly transferred to or from another P-120/P-120S.
+
+The reload operation cannot be executed when the demo/preset song mode or user song recorder is in operation, or when the Function mode is engaged.
+
+No MIDI note/panel data transmission or data reception occurs during a bulk data dump transmit operation. 
+
+F9:	Backup Functions
+After selecting "F9.Y", press the [plus/YES/Up] button to engage the backup function sub-mode, then use the [TEMPO/FUNCTION No. Down,Up] buttons to select the desired backup function, as listed below. 
+
+NOTE
+The backup settings themselves, and the contents of the user song recorder memory, are always backed up.
+
+Even if the Backup is turned on, factory presets can be recalled at any time (see page 44). The factory setting list is found on page 49.
+
+Even if backup is turned on via one of the functions described below, the data will only be retained in memory for about 1 week if the power is not turned on during this time. If the backup period is exceeded, all settings will be reset to their default values. If you want to retain the backup settings for longer periods, be sure to turn the power switch on for a few minutes at least once a week.
+
+F9.1: Voice
+Turns backup of the voice functions listed below on or off. Use the [minus/NO/Down] and [plus/YES/Up] buttons to turn backup "On" or "OFF". 
+The default backup mode is "OFF".
+
+Voice (Keyboard, Dual, and Split)
+Dual (ON/OFF, Voice, and Dual Functions for each voice combination)
+Split (ON/OFF, Voice, and Split Functions for each voice combination)
+Reverb (ON/OFF, Type, and Depth for each voice)
+Effect (ON/OFF, Type, and Depth for each voice)
+Variation (for each voice)
+Touch Sensitivity (including the FIXED volume)
+Metronome (Beat, Volume)
+Preset Song Part Cancel Volume
+
+F9.2: MIDI
+Turns backup of the MIDI functions listed below on or off. Use the [minus/NO/Down] and [plus/YES/Up] buttons to turn backup "On" or "OFF". 
+The default backup mode is "OFF".
+
+Channel (Transmit, Receive)
+Program Change ON/OFF
+MIDI Transmit Transpose
+Local ON/OFF
+Control Change ON/OFF
+
+F9.3: Tuning
+Turns backup of the tuning functions listed below on or off. Use the [minus/NO/Down] and [plus/YES/Up] buttons to turn backup "On" or "OFF". 
+The default backup mode is "OFF".
+
+Transpose
+Tuning
+Scale (including base note)
+
+F9.4: Pedal
+Turns backup of the pedal functions listed below on or off. Use the [minus/NO/Down] and [plus/YES/Up] buttons to turn backup "On" or "OFF". 
+The default backup mode is "OFF".
+
+AUX PEDAL Mode
+Sustain Sample Depth
+Soft Pedal Effect Depth
+SUSTAIN PEDAL Type
+AUX PEDAL Type
+
+This is the end of the file.
+
+F5.1: 3 (AUX PEDAL Mode (expression))
+F5.5: 2 (AUX PEDAL Type)
+F9.1 ON (backup voice between sessions)
+F9.4 ON (backup pedal between sessions)
