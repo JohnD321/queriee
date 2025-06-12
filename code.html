@@ -1,0 +1,52 @@
+<pre>let f= n=>{n= [...n,['Backspace','\b'],['Tab','\t'],['CapsLock','\v'],['Enter','\n'],['ShiftLeft','\0'],['ShiftRight','\1'],['MetaLeft','\2'],['MetaRight','\3'],
+  ['AltLeft','\4'],['AltRight','\5'],['ControlLeft','\6'],['ControlRight','\7'],['ContextMenu','\f'],['Space',' ']].sort().map(i=> i.reverse()); 
+  let m= [[2,13,14,15,16,17,18,19,20,21,12,53,23,4], [61,41,47,29,42,44,49,45,33,39,40,5,6,3],
+    [7,25,43,28,30,31,32,34,35,36,56,55,22], [57,24,50,48,27,46,26,38,37,8,54,59,58], [10,51,0,60,1,52,9,11]].map((j,k)=> (n[k]= []; j.map((i,j)=> n[k][j]= i)))
+  ;[0,1,2,3,4].forEach(j=> n[j]= m[j])
+   n[3][14]= 'Space'; let d1
+  {let f= (i, j= 'div')=> (i|| document.body).appendChild(j.at? document.createElement(j): j), t= f(0, 'template').content, c= f(t), d= f(c)
+    c.className= 'c'; d.className= 'd'; for(let [i, j] of n){if(typeof j!= 'string') break; n.set(j, [...new Set([i, i= i.toUpperCase()])]).set(i, j)
+    ;[f(c= f(d)), f(c)].forEach((d, k)=> (i= n.get(j))&& (d.textContent= i[k]))}; f(0, t.cloneNode(true))}
+  {let d= document.querySelector('.c'); d1= d.firstElementChild; [['focus', 'blur', 'c1'], ['mouseup', 'mousedown', 'c2']].forEach(i=>{
+    ((i, j, k)=> [i, j].forEach((i, j)=> addEventListener(i, e=> d.classList.toggle(k, j))))(...i)})}
+  {let k= new Map([[13,8],[14,6],[27,6],[28,7],[40,9],[41,9],[53,11],[54,6],[55,5],[56,5],[57,24],[58,5],[59,5],[60,5],[61,5]]),
+    k1= n.values(); document.querySelectorAll('.d> div').forEach((i,j)=>{if(k.has(j)) i.style.gridColumn= 'span '+ k.get(j)
+    ;[(n[k1.next().value]= i), ...i.childNodes].forEach(i=> (i.a= i.animate({}, 3000)).cancel())})}
+  {let k1= [...n.values()].slice(61); for(let k in n) {if(k!= +k|| k> 3) break; n[k= +k].forEach((i, j)=>{n.get(i)&& (n.get(i)[2]= [k, j])
+    n.set(n[i], n[k1[28+ Math.min(Math.max(j, i= j< 6? 1: 7), i+ 3)]])})}}
+  n.set(n[54], n['KeyA']); n.set(n[41], n['KeyA']); n.set(n[53], n['Semicolon']); n['IntlBackslash'].style.display= 'none'
+  ;[1, 2, 3, 4, 7, 8, 9, 10].forEach(i=> {let d= n[n[2][i]]; d.style.backgroundColor= '#aaa'
+    n.set(d, n[i< 5? 53: 41])}); n.set(n[57], n[53])
+  {let s= new Set(); document.addEventListener('keyup', e=> s.delete(e.code)); document.addEventListener('keydown', e=>{
+    const c= e.code; e.preventDefault(); if(e.repeat|| s.has(c)){e.stopImmediatePropagation(); return}
+    let x= e.key, y= +e.shiftKey, d = n[c]; if(!d) return; s.add(c); if(e.location== 3){y= 0; if(e.shiftKey) return}
+    if(!n.has(x)){n.set(x, c); n.get(c)[1]= x; d.children[y].textContent= x}})}
+  (f= _=>{let [sg,sm,se,sl,ss]= [0,0,0,0,0].map(i=> new Set()), p,sh, u,u1, t,t1= 1500,t2= 750, r0,r1,r2,
+    k= _=> [{outlineWidth: '2rem', outlineColor: '#fff', zIndex: 5, easing: 'steps(4, jump-end)'},
+     {outlineWidth: '1rem', offset: .95, easing: 'steps(8, jump-none)'}, {zIndex: 1}],
+    k1= [null, {visibility: 'visible', color: 'transparent'}]; ss.add(n['ShiftLeft']).add(n['ShiftRight'])
+    const g= (x, i, ...t)=>{t= t.filter(i=> i); t.forEach(t=> i.classList.toggle(t, x)); x&& sg.add(i)},
+    f1= x=> ['up', 'down'].forEach(i=>{document[`${x}EventListener`](`key${i}`, f2)}), t3= {duration: t1/*, easing: 'steps(18)'/*`steps(${Math.floor(t1/ 200)})`*/},
+    f2= e=>{let d= n[e.code]; if(!d) {d= n[e.code]= n[53]}/*return*/; let h= e.shiftKey, m= p.has(d)
+      if(e= e.type== 'keydown'){if(m&& !u){r1(); clearTimeout(t); u= true; document.getAnimations().forEach(i=> i.finish())}
+        m&& sh.size&& !h&& [d, ...sh].forEach(i=> g(1, i, 'c3')); (!!sh.size== h&& m? sm: se).add(d)}
+      else{[sm, se, sl].forEach(s=> s.delete(d)); [d, ...ss].forEach(d=> g(0, d, 'c3'))} g(0, d, 'c5'); g(e, d, 'p')
+      if(!u1){if(!se.size&& p.isSubsetOf(sm)){sl= sl.union(sm); sm= sm.intersection(ss); /*sg.forEach(d=> g(0, d, 'm', 'mm'));*/ sg.clear()
+        p.forEach(d=> {d= (d= d.children)[d[0].textContent< ' '? 1: +h]; (d= d.a).finish(); d.effect.setKeyframes(k1)
+          d.effect.updateTiming(t3); d.play()}); r2()}} else if(!sl.size&& !se.size) setTimeout(r0, 1000)}
+    f= (r, a)=>{f1('add'); (async _=>{for(a of a){[sg, sm, se].forEach(i=> i.clear()); u= u1= false
+        if(typeof a== 'string') a= [...a].map(c=> {let d= n.get(c), a= n.get(d)
+          if(a){d= n[d]; return new Set(a.indexOf(c)? [d, ss.has(d= n.get(d))? d: n.get(d)]: [d])}}).filter(i=> i)
+        else if(Array.isArray(a)) a= a.map(c=> new Set([...c].map(c=> n[n.get(c)]).filter(i=> i))).filter(i=> i.size)
+        else a= [...a].map(i=> new Set(i.map(i=> n[n[i[0]][i[1]]]))); if(!a.length) continue
+        await new Promise(r=> {r0= r; let f= (i, j, k= t3)=> {i.finish(); i.effect.setKeyframes(j); i.effect.updateTiming(k); i.play()}
+          (async _=>{p= new Set(); for(let s of a){sh= s.intersection(ss); s.forEach(d=>{/*g(1, d, ...(p.has(d)? ['mm', sh.has(d)? '': 'c5']: ['m']))*/
+            f(d.a, [{outlineColor: 'transparent'}, null])})
+            p= s; await new Promise(r=> r2= r)} u1= true})()
+          ;(async _=>{let p= new Set(); g(1, d1, 'c6')
+            for(let s of [...a,,]){if(u) break; s&& s.forEach(d=>{f(d.a, k())
+                })
+              p= s; await new Promise(r=> {r1= r; t= setTimeout(r, s? t2: t1- t2)})}
+            g(0, d1, 'c6'); a[0].forEach(d=> f(d.a, [{outlineColor: 'transparent'}, null]))})()
+        }) }; r(); f1('remove')})() } })() }; navigator.keyboard.getLayoutMap().then(f)
+</pre>
