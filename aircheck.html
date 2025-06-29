@@ -457,7 +457,7 @@ let k= {start: [],
  'WWPI Campus Radio': [, , 'Worcester Polytechnic Institute', , , 'http://radio.wpi.edu:8000/airtime192']
 }; k.start[5]=''
 let a= document.body.appendChild(document.createElement('audio')), v, t,
- s= document.body.appendChild(document.createElement('select'))
+ s= document.body.appendChild(document.createElement('select')); s.inputMode='text'
 a.autoplay= a.controls= true; a.preload= 'none'
 for(let [i,j] of Object.entries(k)){let f= i=> i.slice(i.charAt()== '_')
  if(j[0]) j[0]+= j[0]> 500? 'AM': 'FM'
