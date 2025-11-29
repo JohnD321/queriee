@@ -1,73 +1,66 @@
-<!Doctype html><html><head><meta charset="utf-8"><style>
-:root {--h: 50% 50%; --h0: #fff; --h1: #fff3}  html,body {--c: #888; --v: 1.25; font: calc(var(--v) * 1.25vw) monospace;
-  user-select: none; height: 100%; padding: 0; margin: 0; color: MarkText; background-color: var(--c)}
-.h {background-image: radial-gradient(5vw at var(--h), color-mix(in srgb, var(--h0), transparent) 9%, transparent 12%)}
-.c2 {cursor: not-allowed} .c1 {opacity: .125; cursor: pointer} .b {background-color: #aaa}
-.c {width: 100vw; display: flex; flex-direction: row; border-width: 0}  .c> div> div> div {visibility: hidden;}
-.c> div> div {border-style: outset; white-space: pre; overflow: hidden; border-color: #aaa; display: inline-flex;
-  flex-direction: column-reverse; justify-content: space-around; position: relative; outline: solid var(--h0) 0}
-.c> div> div.p {border-style: inset; padding: .2vw 0 0 .2vw; font-weight: bolder; outline-offset: -.25rem; --h: 55% 53%} .c> div {background: var(--c)}
-.a0> div {grid-column: span 4}  .f {font: 1.1vw sans-serif} .c> div> div.f {justify-content: space-between} .fs {font: 0.75vw sans-serif}
-.a0, .a1, .a2 {margin: calc(var(--v) * 1vw); display: grid; grid-auto-rows: calc(var(--v) * 6vw); grid-gap: calc(var(--v) * 1vmin)}
-.a0 {flex: calc(var(--v) * 15.5); grid-template-columns: repeat(60, 1fr)} .a1 {flex: calc(var(--v) * 3); grid-template-columns: repeat(3, 4fr); text-align: center}
-.a2 {flex: calc(var(--v) * 4); grid-template-columns: repeat(4, 4fr)}
-.c> div> div.m {outline-width: .6rem; z-index: 1}  .c> div> div.mm {outline-width: .8rem; outline-style: double; z-index: 2}  .c> div> div.nm {outline-style: double}
-.c> div> div.c4, .cc> div> div {outline-color: var(--h1);} .c> div> div.c3{outline-color: #444}
-.t1 {animation: var(--t) t1}  @keyframes t1 {from{outline-width: 2rem; outline-color: var(--h0); z-index: 5} to{z-index: 2}}
-.t2 {animation: var(--t) t2}  @keyframes t2 {from{outline-width: 2rem; outline-color: var(--h0); z-index: 5} to{z-index: 2}}
-.t3 {animation: var(--t) t3}  @keyframes t3 {from{visibility: visible} to{color: transparent}}
-.t4 {animation: var(--t) t4}  @keyframes t4 {from{visibility: visible} to{color: transparent}}
-.t5 {animation: var(--t) t5}  @keyframes t5 {from{outline-color: var(--h1)}}  .t6{animation: var(--t) t6}  @keyframes t6{from{outline-color: var(--h1)}}
+<!Doctype html><html><head><meta charset="utf-8"><style> :root {--h: 50% 50%; --h0: #fff; --h1: #fff3}  html,body {--c: #686868; --v: 1.25; font: calc(var(--v) * 1.25vw) monospace;
+    user-select: none; height: 100%; padding: 0; margin: 0; color: MarkText; background-color: var(--c)}
+  @property --b1 {syntax: '<percentage>'; inherits: true; initial-value: 15%}  @property --b2 {syntax: '<color>'; inherits: true; initial-value: #fff7}
+  .b {background-image: radial-gradient(circle at var(--h), var(--b2) 0%, transparent var(--b1))}  .c2 {cursor: not-allowed}  .c1 {opacity: .125; cursor: pointer} .c> div {background: var(--c)}
+  .c {width: 100vw; display: flex; flex-direction: row; border-width: 0}  .c> div> div> div {/*outline: thin dotted;*/ visibility: hidden}
+  .c> div> div {padding: .8vw; border-width: .2vw; border-style: solid; border-color: var(--c)#444#555#777; white-space: pre; border-radius: .5rem .1rem;
+    display: inline-flex; flex-direction: column-reverse; justify-content: space-around; position: relative; outline: solid .3rem transparent}
+  .c> div> div.p {border-color: #333#999#999#333; padding: .9vw .8vw .5vw 1vw; font-weight: bolder; outline-offset: -.15rem; --h: 55% 53%}
+  .d> div {grid-column: span 4}  .f {font: 1.1vw sans-serif} .c> div> div.f {justify-content: space-between}  .fs {font: 0.75vw sans-serif}
+  .d, .d1, .d2 {margin: calc(var(--v) * 1vw); display: grid; grid-auto-rows: calc(var(--v) * 6vw); grid-gap: calc(var(--v) * 1vmin)}
+  .d {flex: calc(var(--v) * 15.5); grid-template-columns: repeat(60, 1fr)}  .d1 {flex: calc(var(--v) * 3); grid-template-columns: repeat(3, 4fr); text-align: center}  .d.c6> div {outline-color: var(--h1)}
+  .d2 {flex: calc(var(--v) * 4); grid-template-columns: repeat(4, 4fr)}
+  .c> div> div.mm {outline-style: double; outline-width: .5rem; outline-offset: -.3rem} .c> div> div.pp {outline-offset: -.4rem}
+  .c> div> div.c5 {outline-color:#fff4 !important}  .c> div> div.c3 {outline-color: #444 !important}
+  .c> div> div> div:first-child {outline: solid .5rem transparent; position: absolute; width: 100%; height: 100%; left: 0; visibility: initial;
+    border-radius: 100%; box-shadow: inset 0 0 5rem 0 #fff; transform: scale(0)}
 </style></head><body><script>
-navigator.keyboard.getLayoutMap().then(k=>{const m= new Map(); k.forEach((v,k)=>{m.set(v, k)}); f(m)}); document.documentElement.focus()
-let aE= (x,y,z)=> [x,y].forEach((i, j)=> addEventListener(i, e=> document.body.classList.toggle(z, j))); aE('focus', 'blur', 'c1'); aE('mouseup', 'mousedown', 'c2')
-let f= m=>{new Map([['\0', 'ShiftLeft'], ['\1', 'ShiftRight'], ['\2', 'MetaLeft'], ['\3', 'MetaRight'], ['\4', 'AltLeft'], ['\5', 'AltRight'], ['\6', 'ControlLeft'],
-  ['\7', 'ControlRight'], ['\b', 'Backspace'], ['\t', 'Tab'], ['\n', 'Enter'], ['\v', 'CapsLock'], ['\f', 'ContextMenu'], [' ', 'Space']]).forEach((i, j)=> m.set(j, i))
-  let a0= Array.from(m.values()).sort(); const o= i=> i? new Map(): new Set(), s= o(), [mn]= [1].map(o)
-  a0= [2,13,14,15,16,17,18,19,20,21,12,53,23,4,61,41,47,29,42,44,49,45,33,39,40,5,6,3,7,25,43,28,30,31,32,34,35,36,56,55,22,57,24,50,48,27,46,26,38,37,8,54,59,58,10,51,0,60,1,52,9,11].map(i=> a0[i])
-  m.forEach((i,j,k)=> j!= (j= j.toUpperCase()) && k.set(j, i)); for(let [i,j] of m){if(Array.isArray(j)) {m.delete(j); break} (m.get(j)|| m.set(j, []).get(j)).push(i)}
-  ;[0, 14, 28, 42].forEach((i,j)=> {i= a0.slice(i, i+ 14); m[j]= i}); m[3][14]='Space'
-  const t= document.body.appendChild(document.createElement('template')).content, d= t.appendChild(document.createElement('div')); d.className= 'c'
-  ;[a0].forEach((i,j)=>{let d1= d.appendChild(document.createElement('div')); d1.className= 'a'+ j; i.forEach(i=>{let d= d1.appendChild(document.createElement('div'))
-    ;[0, 1].forEach(k=> d.appendChild(document.createElement('div')).textContent= m.get(i)[k])})})
-  let c2; document.body.appendChild(c2= t.cloneNode(true)); const c0= document.querySelector('.c'); document.querySelectorAll('.a0> div').forEach((i,j)=> m.get(a0[j])[4]= i)
-  for(let k in m) m[k= +k].forEach((i, j)=>{m.get(i)[2]= [k, j]; let l= j< 6? 1: 7; m.set(m.get(i)[4], m.get(a0[28+ Math.min(Math.max(j, l), l+ 3)])[4])})
-  m.set(m.get('ControlLeft')[4], m.get('KeyA')[4]); m.set(m.get('ShiftLeft')[4], m.get('KeyA')[4]); m.get('IntlBackslash')[4].style.display= 'none'
-  ;[29, 30, 31, 32, 35, 36, 37, 38, 57].map(i=> a0[i]).forEach(c=> {m.get(c)[4].classList.add('b'); m.set(m.get(c)[4], m.get(a0.indexOf(c)< 35? 'ShiftRight': 'ShiftLeft')[4])})
-  ;[13, 14, 27, 28, 40, 41, 53, 54, 55, 56, 57, 58, 59, 60, 61].map(i=> a0[i]).forEach((i,j)=>{m.get(i)[4].style.gridColumnStart= 'span '+ [8,6,6,7,9,9,11,6,5,5,24,5,5,5,5][j]})
-  new Map([['Insert'], ['Home'], ['PageUp', 'Page\nUp'], ['Delete'], ['End'], ['PageDown', 'Page\nDown'], ['ArrowUp','\u25B4'], ['ArrowLeft', '\u25C2'], ['ArrowDown', '\u25BE'],
-    ['ArrowRight', '\u25B8'], ['NumLock', 'Num\nLock'], ['NumpadEnter', 'Enter']]).forEach((i, j)=> m.set(j, [, i]))
-  ;[...'\0\1\2\3\4\5\6\7\v\f\b\t\n'].forEach((i,j)=> {let k; (k= m.get(m.get(i)))[1]= k[4].children[1].textContent= ['Shift','Shift','Meta','\u229E','Alt','Alt','Ctrl','Ctrl','Caps\nLock','𝄙'][j]|| m.get(i)})
-  document.addEventListener('keydown', e=>{const c= e.code; e.preventDefault(); if(e.repeat|| s.has(c)){e.stopImmediatePropagation(); return}
-    let x= e.key, y= +e.shiftKey, d = m.get(c)[4]; if(!d) return; d.classList.add('p'); s.add(c)
-    if(e.location== 3){y= 0; if(e.shiftKey) return; if(!e.getModifierState('NumLock')&& mn.has(c)) y= 1, x= mn.get(c)}
-    if(!m.has(x)){m.set(x, c); m.get(c)[1]= x; d.children[y].textContent= x}
-    if(['NumLock', 'CapsLock'].includes(e.key)) {m.get(e.key)[4].style.opacity= e.getModifierState(e.key)? .25: ''}})
-  document.addEventListener('keyup', e=>{const c= e.code, d = m.get(c)[4]; s.delete(c); if(!d) return; d.classList.remove('p')})
-  ;(f= _=>{let [sg, sc, se, sl]= [0, 0, 0, 0].map(o), ss= new Set([m.get('ShiftLeft')[4], m.get('ShiftRight')[4]]), ac, u, t, s, c, c2, c3, f3, f4, f5,
-    t1= 1250, t2= 750; document.styleSheets[0].cssRules[0].style.setProperty('--t', `${t1}ms steps(${Math.floor(t1/ 100)})`)
-    const f2= _=>{u= true; clearTimeout(t); ac.abort(); g(0, c0, 'cc'); c0.querySelectorAll('[class*="t"]').forEach(i=> g(0, i, 't1', 't2', 'nm', 't5', 't6'))}, f3a= e=> f3(e),
-    f4a= r=>{let f= r=>{if(r.d){const ssh= !s.isDisjointFrom(ss); r.sh== ssh&& r.c? sc.add(c): se.add(c); if(r.c&& ssh&& !r.sh) {[c, c3].forEach(i=> g(1, i, 'c3'))}}
-      else {sc.delete(c); se.delete(c); sl.delete(c); [c, ...ss].forEach(i=> g(0, i, 'c3'))} g(0, c, 'c4'); f5(r)}; if(u|| r.d&& r.c){f2(); f4= f} f(r)},
-    f5a= r=>{if(!se.size&& s.isSubsetOf(sc)) {sl= sl.union(sc); sc= sc.intersection(ss); sg.forEach(i=> g(0, i, 'h', 'm', 'mm')); sg.clear(); s.forEach(c=> g(1, c.children[r.k< ' '? 1: +r.sh], 't3', 't4')); r()}},
-    g= (x, i, ...b)=>{if(!x) i.classList.remove(...b); else if(b.some(i=> i.startsWith('t'))){i= i.classList; i.replace(b[0], b[1])|| i.replace(b[1], b[0])|| i.add(b[0])} else sg.add(i)&& i.classList.add(...b)}
-    f= (r1, a)=>{(async _=>{for(a of a) {[sg, sc, se].forEach(i=> i.clear()); f4= f4a, f5= f5a; u= false; g(1, c0, 'cc'); ac= new AbortController
-      if(typeof a== 'string') a= [...a].map(i=> {let c; if(c= m.get(m.get(i))) return new Set(c.indexOf(i)? [(ss.has(m.get(c[4]))? m.get(c[4]): m.get(m.get(c[4]))), c[4]]: [c[4]])}).filter(i=> i)
-      else if(Array.isArray(a)) a= a.map(i=> new Set([...i].map(c=> m.get(m.get(c))[4])));  else a= [...a].map(i=> new Set(i.map(i=> m.get(i.reduce((i,j)=> m[i][j]))[4]))); if(!a.length) continue
-      await new Promise(r=> {(async _=>{const f= x=> ['up', 'down'].forEach(i=>{document[`${x}EventListener`](`key${i}`, f3a)}); let p= o(), p1= o(), f1= _=>{((p= o())=> (async _=>{f('add')
-          for(s of a){s.forEach(c=>{g(1, c, ...(p.has(c)? s.intersection(ss).has(c)? ['mm']: ['c4', 'mm']: ['m']))
-            c2= m.get(c); if(!ss.has(c2)) {g(1, c2, 'h'); c3= m.get(c2)} else c3= c2; u&& g(1, c, 't5', 't6')}); p= s
-            await new Promise(r=>{f3= e=>{if(!(c= m.get(e.code)[4])) return; r.sh= e.shiftKey; r.d= e.type== 'keydown'; r.c= s.has(c); r.k= m.get(e.code)[0]; f4(r)}})}
-          f5= _=> {if(!sl.size&& !se.size) {f('remove'); r()}}; c0.querySelectorAll('[class*="t"]').forEach(i=> g(0, i, 't5', 't6'))})())(); f1= _=> 0}
-        for(let s of a) {if(u) break; await new Promise(r=> t= setTimeout(_=> {r(); if(u) return; f1(); s.forEach(c =>{g(p1.has(c), c, 'nm'); g(1, c, 't1', 't2')}); p1= s}, t2))}
-        if(!u) t2> t1? t= setTimeout(f2, t2- t1): [...p1].at(-1).addEventListener('animationstart', e=> e.target.addEventListener('animationend', f2, {signal: ac.signal}), {signal: ac.signal})})()})};r1()})()}})()}
-setTimeout(_=>(async _=> {await new Promise(r=>{ alert('Touch typing exercises\n<Enter> or OK')
-  f( r, ['asdf', 'jkl;', 'dfkj', 'fdsa', ' ;lkj ', ['af','j;'], ['sd', 'kl'], 'a f j ;', ['a;','sl','dk','fj'], 'aaddjjll',
-  ['dk','ei','dk'], ['sl','wo','sl'], ['a;','qp','\t[','qp', 'a;'], ['a;','qp','\t[','a;'], ['a;','z/','\0\1','z/','a;'],
-  ['a;','sl','dk','fj','vm','fj','gh','fj'], ['fj','gh','ty','ru','fj'], ['fj','vm','bn','gh','ty'],
-  ['fj','vu','fj','rm','tn','gh','fj'], ['fj','vu','by','gh','tn','rm','fj'] ])})
-  await new Promise(r=>{alert('Twelve Apostles'); f( r, ['Peter','Andrew','James son of Zebedee','John','Philip','Bartholomew','Thomas','Matthew',
-  'James son of Alphaeus','Thaddeus','Simon the Cananean','Judas Iscariot'])})
-  await new Promise(r=>{alert('Saints celebrated in January'); f( r, ['Anthony of Egypt','Fabian','Sebastian','Agnes','Vincent','Marianne Cope',
-  'Francis de Sales','Conversion of Saint Paul','Timothy and Titus','Angela Merici','Thomas Aquinas','John Bosco'])}); alert('Session completed') })(), 1000)
-</script></body></html>
+let f= _=>{let m= [...[...'abcdefghijklmnopqrstuvwxyz'].map(i=> [`Key${i.toUpperCase()}`, i]), ...[...'0123456789'].map(i=> [`Digit${i}`, i]), ['Backquote','`'], ['Space', ' '], ['Quote',"'"], ['BracketLeft','['],
+  ['Slash','/'], ['Backslash','\\'], ['Comma',','], ['Minus','-'], ['Period','.'], ['Equal','='], ['Semicolon',';'], ['BracketRight',']'], ...['ShiftLeft', 'ShiftRight', 'MetaLeft', 'MetaRight', 'AltLeft',
+  'AltRight', 'ControlLeft', 'ControlRight', 'Backspace', 'Tab', 'Enter', 'CapsLock', 'ContextMenu'].map((i, j)=> [i, String.fromCharCode(j)])].sort().map(i=> i.reverse())
+  m= [[2,13,14,15,16,17,18,19,20,21,12,52,23,4],[60,40,46,28,41,43,48,44,32,38,39,5,6,3],[7,24,42,27,29,30,31,33,34,35,55,54,22],[56,49,47,26,45,25,37,36,8,53,58,57],[10,50,0,59,1,51,9,11]].map(i=> i.map(i=> m[i]))
+  const n= new Map(m.flat()); for(let i in m) n[i]= m[i].map(([, j], k)=> (n[j]= [+i, k], j)); m= new Map([[13,8],[14,6],[27,6],[28,7],[40,9],[41,9],[52,11],[53,6],[54,5],[55,5],[56,24],[57,5],[58,5],[59,5],[60,5]])
+  let t= (f= (i, j= 'div')=> (i|| document.body).appendChild(j.nodeName? j: document.createElement(j)))(0, 'template').content, d= f(t); d.className= 'c'; (d= f(d)).className= 'd'
+  ;[...n].forEach(([i, j], k)=>{n.set(j, [...new Set([i, i= i.toUpperCase()])]).set(i, j); i= n.get(j); j= f(d); if([29,30,31,32,35,36,37,38].includes(k)) j.classList.add('b')
+    k= m.get(k); if(k) j.style.gridColumn= 'span '+ k; f(j); [f(j), f(j)].forEach((k, j)=> k.textContent= i[j])})
+  f(0, t.cloneNode(1)); document.querySelector('.c').firstElementChild.querySelectorAll('.b').forEach((i, j)=> (i.b= i.animate(null)).cancel()); [['focus', 'blur', 'c1'],
+    ['mouseup', 'mousedown', 'c2']].forEach(i=>{((i, j, k)=> [i, j].forEach((i, j)=> addEventListener(i, e=> document.querySelector('.c').classList.toggle(k, j))))(...i)})
+  m= n.values(); document.querySelectorAll('.d> div').forEach(i=>{n[m.next().value][2]= i; [i, ...i.children].forEach((i, j)=>{let k= {}, t= {duration: /*t2*/1750, easing: 'steps(18, jump-end)'}
+    if(j== 1) k= {borderRadius: 0, boxShadow: 'inset 0 0 0 0 #fff0', transform: 'scale(1.2)'}; else if(j== 0) [k, t.fill]= [{outlineColor:'#fff8'},'forwards']; (i.a= i.animate([k], t)).cancel()})})
+  document.addEventListener('keydown', e=>{e.preventDefault(); if(e.repeat){e.stopImmediatePropagation(); return}
+    const c= e.code, x= e.key, y= +e.shiftKey+ 1, d = n[c][2]; if(!d) return; if(!n.has(x)){n.set(x, c); n.get(c)[y]= x; d.children[y].textContent= x}})
+  {let [sm, se, sl, ss, p, pp]= Array(6).fill(0).map(i=> (_=> new Set())()), sh, t1= 5000, t2= 1750, f3, f4; const t3= {duration: t1},
+    f2= e=>{let c= e.code, h= e.shiftKey; if(!c) return; if(e= e.type== 'keydown'){let m= p.has(c); f3(m); m&& sh.size&& !h&& [c, ...sh].forEach(c=> g(c, 1, 'c3')); (!!sh.size== h&& m? sm: se).add(c)}
+      else{[sm, se, sl].forEach(s=> s.delete(c)); [c, ...ss].forEach(c=> g(c, 0, 'c3', 'c5', 'pp'))} g(c, e, 'p', pp.has(c)&& 'pp'); f4()},
+    g= (c, b, ...t)=>{c= n[c][2]; t.filter(i=> i).forEach(t=> c.classList.toggle(t, b))}; ss.add('ShiftLeft').add('ShiftRight')
+    f= (r, a)=>{let r0, r1, r2; (f1= a=> ['up', 'down'].forEach(i=>{document[`${a}EventListener`](`key${i}`, f2)}))('add')
+      ;(async _=>{for(a of a){a= a instanceof Set? [...a].map(i=> new Set(i.map(i=> n[i[0]][i[1]]))): typeof a== 'string'?
+      a= [...a].map(h=> {let c= n.get(h), a= n.get(c); if(a){return new Set([c]).add(a.indexOf(h)? n[c][1]< 6? 'ShiftRight': 'ShiftLeft': c)}}).filter(i=> i):
+      Array.isArray(a)? a= a.map(c=> new Set([...c].map(c=> n.get(c)).filter(i=> i))).filter(i=> i.size): ''; if(!a.length) continue
+      await new Promise(r=>{r0= r; let t= 1, p1; f3= m=>{if(!m) return; r2('r2Interrupt'); clearTimeout(t); t= 0; p.forEach(c=> n[c][2].a.effect.updateTiming({delay: 0})); f3= _=> null}
+        f4= _=>{if(!se.size&& p.isSubsetOf(sm)){sl= sl.union(sm); sm= sm.intersection(ss); p.forEach(c=> {g(c, 0, 'mm')}); r1('r1')}}
+        ;(async _=>{p1= new Set(); for(let [i, s] of a.entries()){if(!t) break; s.forEach(c=>{let a= n[c][2].firstElementChild.a; a.cancel(); a.play()})
+          p1= s; await new Promise(r=> t= setTimeout(r2= r, t2, ['r2pre',s])).then(j=> {})}})()
+        ;(async _=>{let f= (x, y)=> [1,2,3,4,7,8,9,10].map(i=> n[2][i]).forEach(c=> f1(c, 'b', x, y)), h,
+          f1= (c, a, k, t)=>{a= n[c][2][a]; if(k) {a.effect.setKeyframes(Object.fromEntries(k.map(b=> {let j; if(Array.isArray(b))[b, ...j]= b
+            return [b, [b== 'offset'? 0: getComputedStyle(n[c][2]).getPropertyValue(b)].concat(j? j[+h.has(c)]:[])]})))}; t&& a.effect.updateTiming(t); a.cancel(); a.play()}
+          p.clear(); p1.forEach(c=> {n[c][2].a.effect.updateTiming({delay: .8* t2})}); for(let s of a){let d= a.length* t2; h= new Set(); sh= s.intersection(ss)
+            pp= s.intersection(p); pp.forEach(c=> g(c, 1, 'mm', !sh.has(c)&& 'c5')); s.forEach(c=>{f1(c, 'a'); h.add(n[2][(c= n[c][1])<1? 1: c<5? c: c==5? 4: c==6? 7: c<11? c: 10])})
+            f([['--b1', '10%', '25%'],['--b2', '#fff4', '#ffff']], {duration: d, fill: 'forwards'}); p= s; await new Promise(r=> r1= r).then(i=>{s.forEach(c=> {n[c][2].a.cancel()})}); d= 2000}
+          f4= _=>{if(!sl.size&& !se.size){f(['--b1', '--b2', 'offset']); setTimeout(r0, 1000, 'r0')}}})()}).then(/*i=>console.log(25,i)*/) }; r(); f1('remove')})() } } }; f()
+</script><script>setTimeout(_=>(async _=> {
+    await new Promise(r=>{alert('Touch typing exercises\n<Enter> or OK')
+      f( r, ['y','AtL','i', new Set([ [[3,2],[3,3]], [[3,3],[1,8]], [[3,3],[1,8],[2,8]], [[3,10],[2,12]], [[3,5]], [[3,9]] ]),
+       'asdfghj',  'qw', 'fakl', 'qwertyuiop[', // ['as', 'akls'],// ['\0\1','L\1\0A'],
+        'kjhgfdsaa', '\';lkjh', 'jhsaq', ['\t]', 'QL', 'q'], '\0', '\1', 'a', 'A',
+      new Set([ [[3,2]], [[3,3],[1,8]], [[3,3],[1,8],[2,8]], [[3,10],[1,13]], [[3,2]], [[3,3]] ]), 'aaddjjll',
+     /* '!', ['\0\1','L\1\0A'],'asdf', 'jkl;', 'dfkj', 'fdsa', ' ;lkj ',*/ ['af','j;'], ['sd', 'kl'], /*'a f j ;',*/ ['a;','sl','dk','fj'],
+      ['dk','ei','dk'], ['sl','wo','sl'], ['a;','qp','\t[','qp', 'a;'], ['a;','qp','\t[','a;'], ['a;','z/','\0\1','z/','a;'],
+      ['a;','sl','dk','fj','vm','fj','gh','fj'], ['fj','gh','ty','ru','fj'], ['fj','vm','bn','gh','ty'],
+      ['fj','vu','fj','rm','tn','gh','fj'], ['fj','vu','by','gh','tn','rm','fj'] ])})
+    await new Promise(r=>{alert('Twelve Apostles'); f( r, ['Peter','Andrew','James son of Zebedee','John','Philip',
+      'Bartholomew','Thomas','Matthew', 'James son of Alphaeus','Thaddeus','Simon the Cananean','Judas Iscariot'])})
+    await new Promise(r=>{alert('Saints celebrated in January'); f( r, ['Anthony of Egypt','Fabian','Sebastian',
+     'Agnes','Vincent','Marianne Cope', 'Francis de Sales','Conversion of Saint Paul','Timothy and Titus',
+     'Angela Merici','Thomas Aquinas','John Bosco'])}); alert('Session completed')
+  })(), 1000)</script></body></html>
