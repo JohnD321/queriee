@@ -97,6 +97,7 @@ let k= {start: [],
  WMEX: [1510, 'Quincy/Boston', 'The Greatest Hits', , , 'https://streaming.proradiosolutions.com/stream/wmex'],
  WIZZ: [1520, 'Greenfield', 'The Valley’s Pure Oldies', 'Pure Oldies 96.9 & 100.5', , 'https://stream.abacast.net/direct/saga-wizzamaac-imc'],
  WVBF: [1530, 'Middleborough/Taunton', 'Hometown Talk Radio / Massachusetts Reading Network', , , 'http://198.20.181.71:8000/;'],
+ //http://popupplayer.radio.net/popupplayer/index.html?station=wvbf
  WADK: [1540, 'Newport, RI', 'News·Talk - Your Hometown Information Station', , , 'https://crystalout.surfernetwork.com:8001/WADK-AM_MP3'],
  WXEX: [1540, 'Exeter, NH', 'The Seacoast Oldies Station', 'Seacoast Oldies', , 'https://ais-sa1.streamon.fm/7671_48k.aac'],
  WNTN: [1550, 'Cambridge', 'Boston’s Hub for International Radio', 'Global Echos Radio Network', , 'https://live.amperwave.net/direct/deltacommunications-wntnamaac-ibc1'],
@@ -177,13 +178,14 @@ let k= {start: [],
  WXPL: [91.3, 'Fitchburg', 'Your Explosive Alternative', 'Fitchburg State University', , 'https://ice23.securenetsystems.net/WXPL'],
  WSHL: [91.3, 'North Easton', , 'Stonehill College Radio', , 'http://wshl.streamon.fm:8000/WSHL-48k.aac'],
  WFMR: [91.3, 'Orleans', , , 'WOMR'],
- WDOM: [91.3, 'Providence, RI', , 'Providence College', , 'http://www.ophanim.net:9050/;'],
- WUNH: [91.3, 'Durham, NH', 'The Freewaves', 'University of New Hampshire', , 'http://s9.viastreaming.net:9000/;stream.mp3'],
- WUML: [91.5, 'Lowell', 'Where Underground Music Lives', , , 'http://108.163.223.242:8133/;'],
+ WDOM: [91.3, 'Providence, RI', , 'Providence College', , 'https://stream.radio.co/s5fd907876/listen'],
+ WUNH: [91.3, 'Durham, NH', 'The Freewaves', 'University of New Hampshire', , 'https://streams.radiomast.io/5cc7d987-c820-4e7d-944a-eb12c71f5674'],
+ //http://s9.viastreaming.net:9000/;stream.mp3
+ WUML: [91.5, 'Lowell', 'Where Underground Music Lives', , , 'https://s3.radio.co/s5e286e909/listen'],
  WBIM: [91.5, 'Bridgewater', 'The Radio Voice of Bridgewater State University', , , 'http://38.135.36.125:7436/stream'],
  WZLY: [91.5, 'Wellesley', , 'Wellesley College Radio', , 'http://wzlystream.wellesley.edu:8000/wzly'],
  WMFO: [91.5, 'Medford/Boston', 'Tufts Freeform Radio', 'Tufts University', , 'http://new-webstream.wmfo.org/lowq'],
- WMLN: [91.5, 'Milton/Boston', , 'Curry College Radio', , 'https://ice41.securenetsystems.net/WMLN'],
+ WMLN: [91.5, 'Milton/Boston', , 'Curry College Radio', , 'https://ice64.securenetsystems.net/WMLN'],
  WSDH: [91.5, 'Sandwich', , 'Sandwich Community Radio', , 'https://wscr.streamguys1.com/live'],
  WMHC: [91.5, 'South Hadley', , 'Mount Holyoke College', , 'http://listen1.mixlr.com/e1e5ea90f457d120663e8827ea544216'],
  WNMH: [91.5, 'Northfield', 'Hogger Radio', 'Mount Hermon School', , 'https://ice64.securenetsystems.net/WNMH'],
@@ -480,8 +482,10 @@ for(let [i,j] of Object.entries(k)){let f= i=> i.slice(i.charAt()== '_')
  let o=s.appendChild(document.createElement('option'))
  o.value= j[5]; o.text= f(i); j.slice(0,5).forEach(i=> o.text+= ' - '+ i)}
 window.addEventListener('keydown', e=> s.focus())
-s.addEventListener('change', e=>{a.src= ''; s.className= (v= s.options[s.selectedIndex].value)? 'm': 'i'
- clearTimeout(t); if (['http:','streema'].some(x=>v.includes(x))) t=setTimeout(_=> window.open(v,'_blank'), 5000); else a.src=v})
+s.addEventListener('change', e=>{a.src= ''; s.className= (v= s.options[s.selectedIndex].value)? 'm': 'i'; clearTimeout(t)
+ if (['http:','streema'].some(x=>v.includes(x)))
+ {if(!navigator.userAgent.includes('Firefox')&& v.includes('198.20.181.71')) v='http://popupplayer.radio.net/popupplayer/index.html?station=wvbf'
+  t=setTimeout(_=> window.open(v,'_blank'), 5000)} else a.src=v})
 a.addEventListener('loadeddata', e=> s.className= 'y'); a.addEventListener('playing', e=> s.className= 'i')
 </script></body></html>
 <!--
