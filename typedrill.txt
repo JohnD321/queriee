@@ -1,0 +1,162 @@
+'wakeup' event.code under keydown listener when lid reopened 
+
+note the feature of shift keys not requiring a repress if reoccurring in next item in phrase...and not shaded as double
+but what about c3 fading in the gray error color, should be finish animation??
+
+put this back into code when including full length desktop keyboards:
+new Map([['Insert'], ['Home'], ['PageUp', 'Page\nUp'], ['Delete'], ['End'], ['PageDown', 'Page\nDown'], ['ArrowUp','\u25B4'], ['ArrowLeft', '\u25C2'], ['ArrowDown', '\u25BE'],
+    ['ArrowRight', '\u25B8'], ['NumLock', 'Num\nLock'], ['NumpadEnter', 'Enter']]).forEach((i, j)=> m.set(j, [, i]))
+
+after match but before release, if good key is released and pressed again, the other key release still finishes and goes to next phrase, should wait
+--------
+keys in leftover set can be released and repressed and incorrectly allow legato typing, should instead fall into error set
+-------------
+
+blur background (c1) during the alert messages? try manual style class document.body.classList.add('?')
+title displaying next collection for user, screen pause
+body.classlist class displaying centered message
+text-align: center applied to body would affect location of keyboard
+we want a 2nd layer on top of keyboard
+alert box for now? alert stops key release and animation of final keys
+look into dialog html elements
+
+if we ever have multiple keyboards, which listener should the textContent code reside? in the outer general or the async loop local one?
+
+something better than boolean x in calling g(1, i, ...b),  false means remove
+
+make a proper list of strings for student use
+build routine from user supplied strings
+
+different colors to indicate particular user action requests?
+
+alt key remains pressed when returning from other window, clear the set and put border style back to outset
+if alt shows down but other key presses do not indicate .altKey==true then we can safely delete alt from se set and remove .p class from that div
+to avoid the occasional phantom held key, wait for repeat loop stoppage tolerance period, then clear keys/sets
+would that require another setTimeout? or just some kind of check on every event? what about an actual keydown that is not repeating
+is there any indication whether it is a phantom stuck key? then there is no way to decide to remove .p class...
+
+key rollover issue with jkl when pressing hjk, then release h, highlight jumps from j to l
+not much we can do except note the immediacy of keyup to keydown
+
+shiftkey does not stay dark when a wrong key is released (maybe that is correct since we don't need to restart shift press with correct letter) 
+
+make animation duration/cadence a formula
+ determine interval/animation speed by length of array, longer array has quicker animation
+
+outline-width units vw,vh? similar with font-size units
+rem unit adjusts to font only, not window size
+
+n= [['KeyA', 'a'],... ['Digit1', '1'],... ['Backquote', '`'],...['ShiftLeft', '\x00'],...]
+ = [['\x04', 'AltLeft'],... ['\t', 'Tab']]
+m= [ [['`', 'Backquote'],...],
+     [['\t', 'Tab'],...],
+     [['\v', 'CapsLock'],...],
+     [['\0', 'ShiftLeft'],...],
+     [['\6', 'ControlLeft'],...] ]
+n=  Map([['`', 'Backquote'],... ['\6', 'ControlLeft']])
+    Map( chr -> code)... Array[0..4][0..13]= code... Object[code]= [row#, col#]
+m= Map(index of wide keys -> grid column span)
+assemble html keyboard: document-fragment-> div.c-> div.d-> 
+
+s: set of data codes (codes from phrase to be matched)
+h:  shift existance boolean to be compared with sh.size
+sh: shift code(s) in s
+m:  t/f, current code in recent set, thus a 'repeat' key (go back to keyboard screen version to find out why m necessary to resolve r1 which allows immed escape to ???)
+note that the realtime async loop has outer scoped p while preview async loop has local p, so m refers to realtime's scoped p which is still at initial set
+so the statement says: 'if user presses one of the key in the initial set p, then we need to immed call r1 in order to proceed to display changes'
+sm: set of matched elements
+p:  previous set s, when in realtime loop is used to check if it includes the d value p.has(d) 
+u:  flag in realtime loop, 2 when user has successfully matched initial key(s)
+     on subsequent key events, instead of checking for matched sets, just cleanup ie, check for empty sets repr held keys
+     1 for breaking from further preview iterations, and no longer check for initial match
+f3: check for any key match, so to abandon preview indicator mode
+f4: check for match of all keys in set,  later: check for full release of keys
+c3:  m&& sh.size&& !h&& [d, ...sh].forEach(i=> g(1, i, 'c3'))   -- match with shift expected but missing, change color of matched key and matched shift
+     turn off
+c5: p.has(d)? ['mm', sh.has(d)? '': 'c5']: ['m']                -- test with red color, supposedly indicates
+
+
+resolve functions r0,r1,r2
+r0 called after both completing match of phrase keys(r2) and then full release of all keys
+r1 called when matching a set of keys in a phrase
+r2 called at end of each timer in preview or at an r1 interruption of preview (a match of an item in initial set)
+eventually we want to catch interim matches (keys in a multi-item set) .. would that require another resolve call? probably not since it's reversible
+make sure to separate graphical reaction of key events from the key handler
+
+variations of key match acceptance
+put in sl if was a match, if released and pressed again it goes to se
+a lenient version would allow a match to add to sm even if se is not empty
+these decisions are not all dependent on a pause/promise situation
+some merely occur within the waiting process of a current promise, such as the shiftKey missing case
+
+//navigator.keyboard.getLayoutMap().then(f)
+might have to give up on keyboard.navigation.getLayoutMap to prepopulate the keyboard without need for user interaction
+layout map ignores current selected keyboard if it is not a latin based alphabet and there are others on the list
+https://issues.chromium.org/issues/40119406  https://issues.chromium.org/issues/340949926 (russian on mac)
+keep a 26-letter and 10-number keyboard order, check last chr for digit or capital letter, can then place in grid
+ok what about the rest? Tab, Enter, Space, etc?
+
+n[d][2] and n[d][2].firstElementChild
+------
+s.forEach(d=> n[d][2].a.cancel())  --this happens at end of each iteration of realtime loop, turn off the forwards fill animations
+f(n[d][2])  -- each iteration in realtime loop
+f(n[d][2].firstElementChild)  -- each it of preview loop
+n[d][2].a.effect.updateTiming({delay: 750})  -- borrow from starting p1 of prev to set delay for beginning keys of realtime loop
+@line#41  n[d][2].a.effect.updateTiming({delay: 0})  --  reset delay,  is this the correct location to do this?
+
+keyboard lock method mdn? for bypassing more browser keyboard shortcuts
+
+---random explanations--- collect all comments and find a way to point to appropriate instruction
+we need to make the double outline faded while pressed, showing full color when released, to remind user must press key again, not just leave held down
+sm= sm.intersection(ss)  means keep the shift key that is pressed as a matched key so it doesn't need to be
+ released/repressed if needed in next key set in the ongoing sequence
+ but what if next key set doesn't have that shift key? 
+[d, ...ss].forEach(d=> g(0, d, 'c3', 'c5', 'pp')) occurs inside keyup, removing any lingering styles from key (and both shiftkeys?)
+
+for now get rid of IntlBackslash
+
+padding change .p during keydown, watch how it affect flex items, so might need padding within child element instead?
+
+create keypress rule: simultaneous keys must have keydowns occurring in same window/timeframe
+what indicator style would properly encourage user not to press sequentially?
+
+can g() toggle boolean be last? no because spread operator allows any number of classList identifiers
+
+use initial setTimeout period to ease back to default dot value size and shade?? to be used at the preview display
+suggest: dot shade animation indep of dot size ?? would require two animations, cannot combine unless we have three point keyframe
+
+if one of keygroup is pressed and eliminates further preview but still on initial keys, then hurry up the animation to perhaps default realtime duration
+
+g() toggles classList token(s)  c3 mm p pp c5
+c3 outline color gray if wrong order pressing before shift key
+mm outline style double when previous key is same as current
+p  border style inset/outset 
+pp alter the outline offset if key pressed is a double outline /?
+c5  outline color faded to indicate 'needs to be released and pressed again'
+
+pp= s.int(p)
+p= prev s
+pp/mm redundancy?
+
+revisit data reception
+revisit key event reaction
+
+what happens @lines#23-28
+setup b animations for divs with class token 'b'
+setup listeners for events that affect focus or involve useless clicking of mouse
+appendChild if cloneNode, try to capture the parentElement's last child instead of needing a classList token requiring querySelector
+add div reference to n[code][2] for each of n.values()
+for each element and its 3 children, set up an animation div.a
+for the parent, keyframe affects outlineColor and timing fill is 'forwards'
+for firstChild,  keyframe affects borderRadius, boxShadow and transform(scale)
+the other two children take default values and simply fade in its upper/lowercase text
+for general keypress, discarding most keyshortcuts, repeats, unwanted keys, if new chr discovered, update n(key to code), n(code to keys), div.child textContent
+
+now for the part that gets done repeatedly
+what is f?  it prepares resolve function for async loops
+r        receive data a (array of 'phrases')
+r0       format phrase_a to array of sets of codes
+r1       preview loop of each set s in a
+r2       realtime loop of s in a
+
+how to move r() references to the inner script with all the other r's ??
