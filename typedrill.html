@@ -1,59 +1,81 @@
-<!Doctype html><html><head><meta charset="utf-8"><style> :root {--h: 50% 50%; --h0: #fff; --h1: #fff3}  html,body {--c: #686868; --v: 1.25; font: calc(var(--v) * 1.25vw) monospace;
-    user-select: none; height: 100%; padding: 0; margin: 0; color: MarkText; background-color: var(--c)}
-  @property --b1 {syntax: '<percentage>'; inherits: true; initial-value: 15%}  @property --b2 {syntax: '<color>'; inherits: true; initial-value: #fff7}
-  .b {background-image: radial-gradient(circle at var(--h), var(--b2) 0%, transparent var(--b1))}  .c2 {cursor: not-allowed}  .c1 {opacity: .125; cursor: pointer} .c> div {background: var(--c)}
-  .c {width: 100vw; display: flex; flex-direction: row; border-width: 0}  .c> div> div> div {/*outline: thin dotted;*/ visibility: hidden}
-  .c> div> div {padding: .8vw; border-width: .2vw; border-style: solid; border-color: var(--c)#444#555#777; white-space: pre; border-radius: .5rem .1rem;
-    display: inline-flex; flex-direction: column-reverse; justify-content: space-around; position: relative; outline: solid .3rem transparent}
-  .c> div> div.p {border-color: #333#999#999#333; padding: .9vw .8vw .5vw 1vw; font-weight: bolder; outline-offset: -.15rem; --h: 55% 53%}
-  .d> div {grid-column: span 4}  .f {font: 1.1vw sans-serif} .c> div> div.f {justify-content: space-between}  .fs {font: 0.75vw sans-serif}
-  .d, .d1, .d2 {margin: calc(var(--v) * 1vw); display: grid; grid-auto-rows: calc(var(--v) * 6vw); grid-gap: calc(var(--v) * 1vmin)}
-  .d {flex: calc(var(--v) * 15.5); grid-template-columns: repeat(60, 1fr)}  .d1 {flex: calc(var(--v) * 3); grid-template-columns: repeat(3, 4fr); text-align: center}  .d.c6> div {outline-color: var(--h1)}
-  .d2 {flex: calc(var(--v) * 4); grid-template-columns: repeat(4, 4fr)}.c> div> div.mm {outline-style: double; outline-width: .5rem; outline-offset: -.3rem} .c> div> div.pp {outline-offset: -.4rem}
-  .c> div> div.c5 {outline-color:#fff4 !important}  .c> div> div.c3 {outline-color: #444 !important}  .c> div> div> div:first-child {outline: solid .5rem transparent; position: absolute;
-    width: 100%; height: 100%; left: 0; visibility: initial; border-radius: 100%; box-shadow: inset 0 0 5rem 0 #fff; transform: scale(0)}</style>
-<script>let r, f= _=>{let m= [...[...'abcdefghijklmnopqrstuvwxyz'].map(i=> [`Key${i.toUpperCase()}`, i]), ...[...'0123456789'].map(i=> [`Digit${i}`, i]), ['Backquote','`'], ['Space', ' '], ['Quote',"'"],
-  ['BracketLeft','['], ['Slash','/'], ['Backslash','\\'], ['Comma',','], ['Minus','-'], ['Period','.'], ['Equal','='], ['Semicolon',';'], ['BracketRight',']'], ...['ShiftLeft', 'ShiftRight', 'MetaLeft',
-    'MetaRight', 'AltLeft', 'AltRight', 'ControlLeft', 'ControlRight', 'Backspace', 'Tab', 'Enter', 'CapsLock', 'ContextMenu'].map((i, j)=> [i, String.fromCharCode(j)])].sort().map(i=> i.reverse())
-  m= [[2,13,14,15,16,17,18,19,20,21,12,52,23,4],[60,40,46,28,41,43,48,44,32,38,39,5,6,3],[7,24,42,27,29,30,31,33,34,35,55,54,22],[56,49,47,26,45,25,37,36,8,53,58,57],[10,50,0,59,1,51,9,11]].map(i=> i.map(i=> m[i]))
-  const n= new Map(m.flat()); for(let i in m) n[i]= m[i].map(([, j], k)=> (n[j]= [+i, k], j)); m= new Map([[13,8],[14,6],[27,6],[28,7],[40,9],[41,9],[52,11],[53,6],[54,5],[55,5],[56,24],[57,5],[58,5],[59,5],[60,5]])
-  let t= (f= (i, j= 'div')=> (i|| document.body).appendChild(j.nodeName? j: document.createElement(j)))(0, 'template').content, d= f(t); d.className= 'c'; (d= f(d)).className= 'd'
-  ;[...n].forEach(([i, j], k)=>{n.set(j, [...new Set([i, i= i.toUpperCase()])]).set(i, j); i= n.get(j); j= f(d); if([29,30,31,32,35,36,37,38].includes(k)) j.classList.add('b')
-    k= m.get(k); if(k) j.style.gridColumn= 'span '+ k; f(j); [f(j), f(j)].forEach((k, j)=> k.textContent= i[j])})
-  f(0, t.cloneNode(1)); (t= document.body.lastChild).querySelectorAll('.b').forEach((i, j)=> (i.b= i.animate(null)).cancel())
-  ;[['focus', 'blur', 'c1'], ['mouseup', 'mousedown', 'c2']].forEach(i=>{((i, j, k)=> [i, j].forEach((i, j)=> addEventListener(i, e=> t.classList.toggle(k, j))))(...i)})
-  m= n.values(); document.querySelectorAll('.d> div').forEach(i=>{n[m.next().value][2]= i; [i, ...i.children].forEach((i, j)=>{let k= {}, t= {duration: /*t2*/1750, easing: 'steps(18, jump-end)'}
-    if(j== 1) k= {borderRadius: 0, boxShadow: 'inset 0 0 0 0 #fff0', transform: 'scale(1.2)'}; else if(j== 0) [k, t.fill]= [{outlineColor:'#fff8'},'forwards']; (i.a= i.animate([k], t)).cancel()})})
-  document.addEventListener('keydown', e=>{e.preventDefault(); if(e.repeat){e.stopImmediatePropagation(); return}
-    const c= e.code, k= e.key, h= +e.shiftKey+ 1, d = n[c][2]; if(!d) return; if(!n.has(k)){n.set(k, c); n.get(c)[h]= k; d.children[h].textContent= k}})
-  {let [sm, se, sl, ss, p, pp]= [...'123456'].map(i=> (_=> new Set())()), sh, t1= 500, t2= 1750, f3, f4; const t3= {duration: t1},
-    f2= e=>{let c= e.code, h= e.shiftKey; if(!c) return; if(e= e.type== 'keydown'){let m= p.has(c); f3(m); m&& sh.size&& !h&& [c, ...sh].forEach(c=> g(c, 1, 'c3')); (!!sh.size== h&& m? sm: se).add(c)}
-      else{[sm, se, sl].forEach(s=> s.delete(c)); [c, ...ss].forEach(c=> g(c, 0, 'c3', 'c5', 'pp'))} g(c, e, 'p', pp.has(c)&& 'pp'); f4()},
-    g= (c, b, ...t)=>{c= n[c][2]; t.filter(i=> i).forEach(t=> c.classList.toggle(t, b))}; ss.add('ShiftLeft').add('ShiftRight')
-    f= a=>{let r0, r2, r1; (f1= a=> ['up', 'down'].forEach(i=>{document[`${a}EventListener`](`key${i}`, f2)}))('add')
-      ;(async _=>{for(a of a){a= a instanceof Set? [...a].map(i=> new Set(i.map(i=> n[i[0]][i[1]]))): typeof a== 'string'?
-      a= [...a].map(h=> {let c= n.get(h), a= n.get(c); if(a){return new Set([c]).add(a.indexOf(h)? n[c][1]< 6? 'ShiftRight': 'ShiftLeft': c)}}).filter(i=> i):
-      Array.isArray(a)? a= a.map(c=> new Set([...c].map(c=> n.get(c)).filter(i=> i))).filter(i=> i.size): ''; if(!a.length) continue
-      await new Promise(r=>{r0= r; let t= 1, p1; f3= m=>{if(!m) return; r1('r1Interrupt'); clearTimeout(t); t= 0; p.forEach(c=> n[c][2].a.effect.updateTiming({delay: 0})); f3= _=> null}
-        f4= _=>{if(!se.size&& p.isSubsetOf(sm)){sl= sl.union(sm); sm= sm.intersection(ss); p.forEach(c=> {g(c, 0, 'mm')}); r2('r2')}}
-        ;(async _=>{p1= new Set(); for(let [i, s] of a.entries()){if(!t) break; s.forEach(c=>{let a= n[c][2].firstElementChild.a; a.cancel(); a.play()})
-          p1= s; await new Promise(r=> t= setTimeout(r1= r, t2, ['r1pre',s])).then(j=> {})}})()
-        ;(async _=>{let f1= (c, a, k, t)=>{a= n[c][2][a]; if(k) {a.effect.setKeyframes(Object.fromEntries(k.map(b=> {let j; if(Array.isArray(b))[b, ...j]= b
-          return [b, [b== 'offset'? 0: getComputedStyle(n[c][2]).getPropertyValue(b)].concat(j? j[+h.has(c)]:[])]})))}; t&& a.effect.updateTiming(t); a.cancel(); a.play()},
-          f= (x, y)=> [1,2,3,4,7,8,9,10].map(i=> n[2][i]).forEach(c=> f1(c, 'b', x, y)), h
-          p.clear(); p1.forEach(c=> {n[c][2].a.effect.updateTiming({delay: .8* t2})}); for(let s of a){let d= a.length* t2/8; h= new Set(); sh= s.intersection(ss)
-            pp= s.intersection(p); pp.forEach(c=> g(c, 1, 'mm', !sh.has(c)&& 'c5')); s.forEach(c=>{f1(c, 'a'); h.add(n[2][(c= n[c][1])<1? 1: c<5? c: c==5? 4: c==6? 7: c<11? c: 10])})
-            f([['--b1', '10%', '25%'],['--b2', '#fff4', '#ffff']], {duration: d, fill: 'forwards'}); p= s; await new Promise(r=> r2= r).then(i=>{s.forEach(c=> {n[c][2].a.cancel()})}); d= 1000}
-          f4= _=>{if(!sl.size&& !se.size){f(['--b1', '--b2', 'offset']); setTimeout(r0, 1000, 'r0')}}})()}).then(/*i=>console.log(25,i)*/) }; r(); f1('remove')})() } } }; setTimeout(f)
-</script><script>setTimeout(_=>(async _=> {let f1= (a1, a)=> new Promise(rr=>{r= rr; alert(a1); f(a)})
-  await f1('Touch typing exercises\n<Enter> or OK', ['yes','AtL'//,'i', new Set([ [[3,2],[3,3]], [[3,3],[1,8]], [[3,3],[1,8],[2,8]], [[3,10],[2,12]], [[3,5]], [[3,9]] ]),
-       // 'asdfghj',  'qw', 'fakl', 'qwertyuiop[', // ['as', 'akls'],// ['\0\1','L\1\0A'],
-     //    'kjhgfdsaa', '\';lkjh', 'jhsaq', ['\t]', 'QL', 'q'], '\0', '\1', 'a', 'A',
-     //  new Set([ [[3,2]], [[3,3],[1,8]], [[3,3],[1,8],[2,8]], [[3,10],[1,13]], [[3,2]], [[3,3]] ]), 'aaddjjll',
-     // /* '!', ['\0\1','L\1\0A'],'asdf', 'jkl;', 'dfkj', 'fdsa', ' ;lkj ',*/ ['af','j;'], ['sd', 'kl'], /*'a f j ;',*/ ['a;','sl','dk','fj'],
-     //  ['dk','ei','dk'], ['sl','wo','sl'], ['a;','qp','\t[','qp', 'a;'], ['a;','qp','\t[','a;'], ['a;','z/','\0\1','z/','a;'],
-     //  ['a;','sl','dk','fj','vm','fj','gh','fj'], ['fj','gh','ty','ru','fj'], ['fj','vm','bn','gh','ty'],
-      /*['fj','vu','fj','rm','tn','gh','fj'],*/ ['fj','vu','by','gh','tn','rm','fj'] ])
-    await f1('Twelve Apostles', ['Peter',/*'Andrew','James son of Zebedee','John','Philip','Bartholomew','Thomas','Matthew', 'James son of Alphaeus','Thaddeus','Simon the Cananean','Judas Iscariot'*/])
-    await f1('Saints celebrated in January', ['Anthony of Egypt'/*,'Fabian','Sebastian', 'Agnes','Vincent','Marianne Cope', 'Francis de Sales','Conversion of Saint Paul','Timothy and Titus',
+<!Doctype html><html><head><meta charset="utf-8"><style> :root {--h: 50% 50%; --h0: #fff; --h1: #fff3; --o: -.15rem}
+  html,body {--c: #686868; --v: 1.25; font: calc(var(--v) * 1.25vw) monospace; user-select: none;
+    height: 100%; padding: 0; margin: 0; color: MarkText; background-color: var(--c)}
+  @property --b1 {syntax: '<percentage>'; inherits: true; initial-value: 15%}
+  @property --b2 {syntax: '<color>'; inherits: true; initial-value: #fff7}
+  .k> div.h {background-image: radial-gradient(circle at var(--h), var(--b2) 0%, transparent var(--b1))}
+  .c2 {cursor: not-allowed}  .c1 {/*opacity: .125;*/ cursor: pointer}
+  .c> div {background: var(--c)} .c {width: 100vw; display: flex; flex-direction: row; border-width: 0; outline: none}
+  .c> div> div> div {outline: thin dotted; /*visibility: hidden*/}
+  .c> div> div {padding: .8vw; border-width: .2vw; border-style: solid; border-color: var(--c)#444#555#777;
+    white-space: pre; border-radius: .5rem .1rem; display: inline-flex; flex-direction: column-reverse;
+    justify-content: space-around; position: relative; outline: solid .3rem transparent}
+  .c> div> div.d {outline-style: double; outline-width: .5rem; outline-offset: -.3rem; --o: -.4rem}
+  .c> div> div.p {border-color: #333#999#999#333; padding: .9vw .8vw .5vw 1vw;
+    font-weight: bolder; outline-offset: var(--o); --h: 55% 53%} .fs {font: 0.75vw sans-serif}
+  .k> div {grid-column: span 4}  .f {font: 1.1vw sans-serif} .c> div> div.f {justify-content: space-between}
+  .k, .k1, .k2 {margin: calc(var(--v) * 1vw); display: grid; grid-auto-rows: calc(var(--v) * 6vw); grid-gap: calc(var(--v) * 1vmin)}
+  .k {flex: calc(var(--v) * 15.5); grid-template-columns: repeat(60, 1fr)}
+  .k1 {flex: calc(var(--v) * 3); grid-template-columns: repeat(3, 4fr); text-align: center}
+  .k2 {flex: calc(var(--v) * 4); grid-template-columns: repeat(4, 4fr)}
+  .c> div> div.c5 {outline-color:#fff4 !important} .c> div> div.c3 {outline-color: #444 !important}
+  .c> div> div> div:last-child {outline: solid .5rem transparent; position: absolute; width: 100%; height: 100%;
+    left: 0; visibility: initial; border-radius: 100%; box-shadow: inset 0 0 5rem 0 #fff; transform: scale(0)}</style>
+<script>let f= _=>{let m= [[[...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map(i=> `Key${i}`), [...'0123456789'].map(i=> `Digit${i}`),
+  ['Backquote','Quote','BracketLeft','Slash','Backslash','Comma','Minus','Period','Equal','Semicolon','BracketRight']].flat().map(i=> [i, []]),
+   [['Space',[' ']]], ['ShiftLeft','ShiftRight','MetaLeft','MetaRight', 'AltLeft','AltRight','ControlLeft',
+  'ControlRight','Backspace','Tab','Enter','CapsLock','ContextMenu'].map((i, j)=> [i, [String.fromCharCode(j)]])].flat().sort()
+  m= [[2,13,14,15,16,17,18,19,20,21,12,52,23,4], [60,40,46,28,41,43,48,44,32,38,39,5,6,3], [7,24,42,27,29,30,31,33,34,35,55,54,22],
+  [56,49,47,26,45,25,37,36,8,53,58,57], [10,50,0,59,1,51,9,11]].map(i=> i.map(i=> m[i]))
+  const n= new Map(m.flat()); for(let x in m) n[x]= m[x].map(([c], y)=> (n[c]= [+x, y], c))
+  let t= (f= (i, j= 'div')=> (i|| document.body).appendChild(j.nodeName? j: document.createElement(j)))(0, 'template').content,
+  k= f(t); k.className= 'c'; (k= f(k)).className= 'k'
+  m= new Map([[13,8], [14,6], [27,6], [28,7], [40,9], [41,9], [52,11], [53,6], [54,5], [55,5], [56,24], [57,5], [58,5],[59,5],[60,5]])
+  ;[...n].forEach(([c, a], i)=>{a.forEach(k=> n.set(k, c)); const d= f(k), w= m.get(i); f(d); f(d); f(d); if(w) d.style.gridColumn= 'span '+ w})
+  f(0, t.cloneNode(true)); t= document.body.lastChild; [['focus', 'blur', 'c1'], ['mouseup', 'mousedown', 'c2']].forEach(i=>((i, j, k)=>
+    [i, j].forEach((i, j)=> t.addEventListener(i, e=> e.currentTarget.classList.toggle(k, j))))(...i)); t.tabIndex= -1; t.focus()
+  t.addEventListener('keydown', e=>{e.preventDefault(); if(e.repeat){e.stopImmediatePropagation(); return}
+    const c= e.code, k= e.key, h= +e.shiftKey, d = m.get(c); if(!d) return
+    if(!n.has(k)){n.set(k, c); n.get(c)[h]= k; d.children[h].textContent= k}})
+  m= new Map(); let hh= new Set(), iterator= n.keys(); document.querySelectorAll('.k> div').forEach((i, j)=>{m.set(iterator.next().value, i)
+    if([29,30,31,32,35,36,37,38].includes(j)){hh.add(i); i.classList.add('h'); (i.h= i.animate(null)).cancel()}
+    ;[i, ...i.children].forEach((i, j)=>{let k= {}, t= {duration: /*t2*/1750, easing: 'steps(18, jump-end)'}
+      if(j== 3) k= {borderRadius: 0, boxShadow: 'inset 0 0 0 0 #fff0', transform: 'scale(1.2)'}
+      else if(j== 0) [k, t.fill]= [{outlineColor:'#fff8'}, 'forwards']; (i.a= i.animate([k], t)).cancel()})})
+  {let [sm, se, sl, ss, p]= [...'123456'].map(i=> new Set()), sh, t1= 500, t2= 1750, f3, f4; [...'\0\1'].forEach(c=> ss.add(m.get(n.get(c))))
+    const g= (d, b, ...t)=>{t.filter(i=> i).forEach(t=> d.classList.toggle(t, b))}, t3= {duration: t1}
+    f= a=>{let s= new AbortController(); ['up', 'down'].forEach(i=> t.addEventListener('key'+ i, 
+      e=>{const c= e.code, h= e.shiftKey; if(!c) return; let d= m.get(c); g(d, e= e.type== 'keydown', 'p')
+        if(e){let m= p.has(d); m&& f3(); m&& sh.size&& !h&& [d, ...sh].forEach(d=> g(d, 1, 'c3')); (!!sh.size== h&& m? sm: se).add(d)}
+        else{[sm, se, sl].forEach(s=> s.delete(d)); [d, ...ss].forEach(d=> g(d, 0, 'c3', 'c5'))}; f4()}, {signal: s.signal}))
+      ;(async _=>{for(a of a){a= typeof a== 'string'? a= [...a].map(h=> {let c= n.get(h), a= n.get(c)
+            if(a) return new Set([c]).add(a.indexOf(h)? n.get(n[c][1]< 6? '\1': '\0'): c)}).filter(i=> i):
+          a instanceof Set? [...a].map(i=> new Set(i.map(([i, j])=> n[i][j]))):
+          Array.isArray(a)? a= a.map(c=> new Set([...c].map(c=> n.get(c)).filter(i=> i))).filter(i=> i.size): ''
+        if(!a.length) continue; a.forEach((s, i)=> a[i]= [new Set([...s].map(c=> m.get(c))),
+          new Set([...s].filter(i=> n[i][0]< 4).map(c=> m.get(n[2][(c= n[c][1])<1? 1: c<5? c: c==5? 4: c==6? 7: c<11? c: 10])))])
+        await new Promise(r=>{let r2, r1, r0= r, t= true; f3= _=>{r1('r1Interrupt'); t= clearTimeout(t); f3= _=> null}
+          f4= _=>{if(!se.size&& p.isSubsetOf(sm)){sl= sl.union(sm); sm= sm.intersection(ss); p.forEach(d=>{g(d, 0, 'd')}); r2('r2')}}
+          ;(async _=>{let p= new Set(), f= t=> a[0][0].forEach(d=> {d.a.effect.updateTiming({delay: t})}); f(.8* t2)
+            for(let [s, h] of a){if(!t) break; s.forEach(d=>{let a= d.lastElementChild.a; a.cancel(); a.play()})
+              p= s; await new Promise(r=> t= setTimeout(r1= r, t2, ['r1 preview',s])).then(i=> {console.log(66, i)})} f(0)})()
+          ;(async _=>{p= new Set(); let f= (d, a, k, t, h)=>{a= d[a]; t&& a.effect.updateTiming(t)
+              if(k){a.effect.setKeyframes(Object.fromEntries(k.map(s=>{let v; if(Array.isArray(s)) [s, ...v]= s
+                return [s, [s== 'offset'? 0: getComputedStyle(d).getPropertyValue(s)].concat(v? v[+h.has(d)]: [])]})))} a.cancel(); a.play()}
+            for(let [s, h] of a){let t= a.length* t2/8; sh= s.intersection(ss); s.intersection(p).forEach(d=> g(d, 1, 'd', !sh.has(d)&& 'c5'))
+              hh.forEach(d=> f(d, 'h', [['--b1', '10%', '25%'],['--b2', '#fff4', '#ffff']], {duration: t, fill: 'forwards'}, h))
+              s.forEach(d=>{f(d, 'a')}); p= s; await new Promise(r=> r2= r).then(i=>{console.log(76,i); s.forEach(d=> {d.a.cancel()})}); t= 1000}
+            f4= _=>{if(!sl.size&& !se.size){hh.forEach(d=> f(d, 'h', ['--b1', '--b2', 'offset'])); setTimeout(r0, 1000, 'r0')}}
+          })()}).then(i=>console.log(79, 'realtime', i)) }; f.r(); s.abort()})() } } }; setTimeout(f)
+</script><script>setTimeout(_=>(async _=> {let f1= (a1, a)=> new Promise(r=>{f.r= r; alert(a1); f(a)}).then(i=> console.log(79,i))
+  await f1('Touch typing exercises\n<Enter> or OK', [new Set([ [[0,0]], [[3,2],[3,3]], [[3,3],[1,8]], [[3,3],[1,8],[2,8]], [[3,10],[2,12]] ]),
+    // 'asdfghj',  'qw', 'fakl', 'qwertyuiop[', // ['as', 'akls'],// ['\0\1','L\1\0A'],
+    //    'kjhgfdsaa', '\';lkjh', 'jhsaq', ['\t]', 'QL', 'q'], '\0', '\1', 'a', 'A',
+    // /* '!', ['\0\1','L\1\0A'],'asdf', 'jkl;', 'dfkj', 'fdsa', ' ;lkj ',*/ ['af','j;'], ['sd', 'kl'], /*'a f j ;',*/
+    //  ['dk','ei','dk'], ['sl','wo','sl'], ['a;','qp','\t[','qp', 'a;'], ['a;','qp','\t[','a;'], ['a;','z/','\0\1','z/','a;'],
+    /*['fj','vu','fj','rm','tn','gh','fj'], ['fj','vu','by','gh','tn','rm','fj']*/ ])
+  await f1('Twelve Apostles', ['Peter',/*'Andrew','James son of Zebedee','John','Philip','Bartholomew','Thomas','Matthew',
+    'James son of Alphaeus','Thaddeus','Simon the Cananean','Judas Iscariot'*/])
+  await f1('Saints celebrated in January', ['Anthony of Egypt'/*,'Fabian','Sebastian', 'Agnes','Vincent','Marianne Cope',
+    'Francis de Sales','Conversion of Saint Paul','Timothy and Titus',
      'Angela Merici','Thomas Aquinas','John Bosco'*/]); alert('Session completed')})())</script></head><body></body></html>
