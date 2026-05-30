@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<script>
+async function fetchDbpediaAbstract() {
+  const resource = "Mathematics"; // The DBpedia resource you are interested in
+  const sparqlQuery = `
+    PREFIX dbo: <http://dbpedia.org/ontology/>
+    SELECT ?abstract
+    WHERE {
+      <http://dbpedia.org/resource/${resource}> dbo:abstract ?abstract .
+      FILTER (lang(?abstract) = 'en')
+    }
+  `;
+
+  // Encode the SPARQL query for use in a URL
+  const encodedQuery = encodeURIComponent(sparqlQuery);
+  const dbpediaEndpoint = `https://dbpedia.org/sparql?query=${encodedQuery}&format=json`;
+
+  try {
+    const response = await fetch(dbpediaEndpoint);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    // Process the results
+    if (data.results.bindings.length > 0) {
+      const abstract = data.results.bindings[0].abstract.value;
+      console.log(`Abstract for ${resource}:`, abstract);
+    } else {
+      console.log(`No abstract found for ${resource}.`);
+    }
+  } catch (error) {
+    console.error("Error fetching data from DBpedia:", error);
+  }
+}
+
+fetchDbpediaAbstract();
+</script>
+</html>
