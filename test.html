@@ -4,12 +4,11 @@
 async function fetchDbpediaAbstract() {
   const resource = "Mathematics"; // The DBpedia resource you are interested in
   const sparqlQuery = `
-    PREFIX dbo: <http://dbpedia.org/ontology/>
-    SELECT ?abstract
-    WHERE {
-      <http://dbpedia.org/resource/${resource}> dbo:abstract ?abstract .
-      FILTER (lang(?abstract) = 'en')
-    }
+SELECT ?city
+WHERE {
+        ?city rdf:type dbo:City .
+}
+limit 4
   `;
 
   // Encode the SPARQL query for use in a URL
